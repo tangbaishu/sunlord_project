@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "name": "windows-gcc-x64",
+            "includePath": [
+                "D:/Keil_v5/ARM/ARMCC/include",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/GD32F4xx_Firmware_Library/CMSIS",
+                "${workspaceFolder}/GD32F4xx_Firmware_Library/CMSIS/GD/GD32F4xx/Source",
+                "${workspaceFolder}/GD32F4xx_Firmware_Library/CMSIS/GD/GD32F4xx/Include",
+                "${workspaceFolder}/GD32F4xx_Firmware_Library/GD32F4xx_standard_peripheral/Source",
+                "${workspaceFolder}/GD32F4xx_Firmware_Library/GD32F4xx_standard_peripheral/Include",
+                "${workspaceFolder}/GD32F4xx_Firmware_Library/GD32F4xx_usb_library",
+                "${workspaceFolder}/Soft_Drive",
+                "${workspaceFolder}/Utilities",
+                "${workspaceFolder}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CC_ARM"
+            ],
+            "configurationProvider": "iarsystems.iar-build",
+            "intelliSenseMode": "windows-gcc-x64",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "compilerPath": "gcc"
+        }
+    ],
+    "version": 4
+}

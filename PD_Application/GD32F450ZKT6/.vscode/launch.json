@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      // "cwd": "e:/TLB/Embedded/soferware/F407VGT6_V1.9/Applictaion_Layer",
+      // "program": "e:/TLB/Embedded/soferware/F407VGT6_V1.9/Applictaion_Layer/build/Debug/outDebug",
+      "MIMode": "gdb",
+      // "miDebuggerPath": "D:/Program Files/Git/mingw64/bin/gdb.exe",
+      "preLaunchTask": "gc", //这里注意一下这个名字一会儿还要用到
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

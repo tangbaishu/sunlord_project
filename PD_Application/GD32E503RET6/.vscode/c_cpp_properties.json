@@ -1,0 +1,35 @@
+{
+    "configurations": [
+        {
+            "name": "windows-gcc-x64",
+            "includePath": [
+                "D:/Keil_v5/ARM/ARMCC/include",
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/CMSIS",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Source",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/GD32E50x_usbd_library",
+                "${workspaceFolder}/GD32E50x_Firmware_Library/GD32E50x_usbhs_library",
+                "${workspaceFolder}/Application_Layer",
+                "${workspaceFolder}/Business_Logic_Layer",
+                "${workspaceFolder}/Function_Module_Layer",
+                "${workspaceFolder}/Hardware_Driver_Layer",
+                "${workspaceFolder}/Utilities"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__CC_ARM"
+            ],
+            "configurationProvider": "iarsystems.iar-build",
+            "intelliSenseMode": "windows-gcc-x64",
+            "cStandard": "${default}",
+            "cppStandard": "${default}",
+            "compilerPath": "gcc"
+        }
+    ],
+    "version": 4
+}
