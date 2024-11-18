@@ -35,4 +35,4 @@
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h \
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h \
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h \
-  ..\.\systick.h
+  ..\.\systick.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h

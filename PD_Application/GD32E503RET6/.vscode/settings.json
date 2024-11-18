@@ -58,7 +58,11 @@
 	"gd32e50x.h": "c",
 	"gd32e50x_libopt.h": "c",
 	"software_iic_driver.h": "c",
-	"core_cm33.h": "c"
+	"core_cm33.h": "c",
+	"oled_check.h": "c",
+	"iic_api.h": "c",
+	"limits": "cpp",
+	"memory": "cpp"
 },
 "commentTranslate.hover.enabled": true,
 

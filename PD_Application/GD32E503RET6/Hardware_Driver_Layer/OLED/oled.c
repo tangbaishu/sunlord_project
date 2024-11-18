@@ -25,6 +25,7 @@
 #include "OLED/oledfont.h"
 #include "IIC_Driver/software_iic_driver.h"
 #include "systick.h"
+#include "stdio.h"
 // OLED的显存
 // 存放格式如下.
 //[0]0 1 2 3 ... 127
@@ -235,7 +236,9 @@ void OLED_DrawBMP(unsigned char x0, unsigned char y0, unsigned char x1, unsigned
 // 初始化SSD1306
 void OLED_Init(void)
 {
-
+	printf("OLED_INIT\r\n");
+	software_iic_Init();
+	
 	delay_1ms(800);
 	OLED_WR_Byte(0xAE, OLED_CMD); //--display off
 	OLED_WR_Byte(0x00, OLED_CMD); //---set low column address

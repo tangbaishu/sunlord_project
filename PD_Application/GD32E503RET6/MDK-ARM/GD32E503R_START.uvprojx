@@ -621,7 +621,7 @@
             <File>
               <FileName>sw3516p_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Hardware_Driver_Layer\BSP\sw3516p_driver.c</FilePath>
+              <FilePath>..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.c</FilePath>
             </File>
           </Files>
         </Group>

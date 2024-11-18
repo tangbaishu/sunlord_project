@@ -1,10 +1,44 @@
 #include "IIC_Driver/software_iic_driver.h"
+#include "stdio.h"
 
 
 void software_iic_Init(void)
 {
-	rcu_periph_clock_enable(RCU_GPIOB);
-	gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_10 | GPIO_PIN_11);
+	rcu_periph_clock_enable(SOFTWARE_IIC_COLCK);
+	IIC_SDA_PIN_HIGH();
+	IIC_SCL_PIN_HIGH();
+	gpio_init(SOFTWARE_IIC_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, SOFTWARE_IIC_SCL_PIN | SOFTWARE_IIC_SDA_PIN);
+
+}
+
+/**
+ * @brief 实测9.4us
+ * 
+ * @param n 
+ */
+void delay_10us(unsigned char n)
+{
+	volatile unsigned char num=0,i=0;
+	for(; i < n; i++)
+	{
+		for(num=0; num<80; num++)
+		{
+			__NOP();
+		}
+	}
+}
+
+void SDA_Test(void)
+{
+	software_iic_Init();
+	while (1)
+	{
+		IIC_SDA_PIN_LOW();
+		delay_10us(1);
+		IIC_SDA_PIN_INPUT();
+		delay_10us(1);
+		IIC_SDA_PIN_OUTPUT();
+	}
 }
 
 /**********************************************
@@ -12,11 +46,16 @@ void software_iic_Init(void)
 **********************************************/
 void IIC_Start(void)
 {
+	IIC_SDA_PIN_HIGH();
+	IIC_SDA_PIN_OUTPUT();
+	IIC_SCL_PIN_HIGH();
+	IIC_SCL_PIN_OUTPUT();
 
-	OLED_SCLK_Set();
-	OLED_SDIN_Set();
-	OLED_SDIN_Clr();
-	OLED_SCLK_Clr();
+	delay_10us(1);
+	IIC_SDA_PIN_LOW();
+	delay_10us(1);
+	IIC_SCL_PIN_LOW();
+	delay_10us(1);
 }
 
 /**********************************************
@@ -24,34 +63,43 @@ void IIC_Start(void)
 **********************************************/
 void IIC_Stop(void)
 {
-	OLED_SCLK_Set();
-	//	OLED_SCLK_Clr();
-	OLED_SDIN_Clr();
-	OLED_SDIN_Set();
+	IIC_SDA_PIN_LOW();
+	IIC_SDA_PIN_OUTPUT();
+	IIC_SCL_PIN_HIGH();
+	delay_10us(1);
+	IIC_SDA_PIN_HIGH();
+	delay_10us(1);
+	IIC_SDA_PIN_INPUT();
+	IIC_SCL_PIN_INPUT();
 }
 
 void IIC_Wait_Ack(void)
 {
+	IIC_SDA_PIN_INPUT();
+	while (IIC_SDA_PIN_READ());
+	IIC_SCL_PIN_HIGH();
+	delay_10us(1);
+	IIC_SCL_PIN_LOW();
+	delay_10us(1);
+	IIC_SDA_PIN_LOW();
+	IIC_SDA_PIN_OUTPUT();
+}
 
-	// GPIOB->CRH &= 0XFFF0FFFF;	//设置PB12为上拉输入模式
-	// GPIOB->CRH |= 0x00080000;
-	//	OLED_SDA = 1;
-	//	delay_us(1);
-	// OLED_SCL = 1;
-	// delay_us(50000);
-	/*	while(1)
-		{
-			if(!OLED_SDA)				//判断是否接收到OLED 应答信号
-			{
-				//GPIOB->CRH &= 0XFFF0FFFF;	//设置PB12为通用推免输出模式
-				//GPIOB->CRH |= 0x00030000;
-				return;
-			}
-		}
-	*/
-	OLED_SCLK_Set();
-	OLED_SCLK_Clr();
-	delay_1ms(1);
+void IIC_Send_Ack(void)
+{
+	IIC_SDA_PIN_LOW();
+	IIC_SCL_PIN_HIGH();
+	delay_10us(1);
+	IIC_SCL_PIN_LOW();
+	delay_10us(1);
+}
+
+void IIC_Send_NAck(void)
+{
+	IIC_SCL_PIN_HIGH();
+	delay_10us(1);
+	IIC_SCL_PIN_LOW();
+	delay_10us(1);
 }
 
 /**********************************************
@@ -62,22 +110,49 @@ void Write_IIC_Byte(unsigned char IIC_Byte)
 	unsigned char i;
 	unsigned char m, da;
 	da = IIC_Byte;
-	OLED_SCLK_Clr();
+	IIC_SCL_PIN_LOW();
 	for (i = 0; i < 8; i++)
 	{
 		m = da;
-		//	OLED_SCLK_Clr();
+		//	IIC_SCL_PIN_LOW();
 		m = m & 0x80;
 		if (m == 0x80)
 		{
-			OLED_SDIN_Set();
+			IIC_SDA_PIN_HIGH();
 		}
 		else
-			OLED_SDIN_Clr();
+			IIC_SDA_PIN_LOW();
 		da = da << 1;
-		OLED_SCLK_Set();
-		OLED_SCLK_Clr();
+		delay_10us(1);
+		IIC_SCL_PIN_HIGH();
+		delay_10us(1);
+		IIC_SCL_PIN_LOW();
 	}
+}
+
+/**********************************************
+// IIC Read byte
+**********************************************/
+void Read_IIC_Byte(unsigned char *IIC_Byte)
+{
+	unsigned char i;
+	unsigned char m, da;
+	*IIC_Byte = 0;
+	IIC_SDA_PIN_INPUT();
+	delay_10us(1);
+	for (i = 0; i < 8; i++)
+	{
+		IIC_SCL_PIN_HIGH();
+		delay_10us(1);
+		if(IIC_SDA_PIN_READ())
+		{
+			*IIC_Byte |= 0x80>>i;
+		}
+		IIC_SCL_PIN_LOW();
+		delay_10us(1);
+	}
+	IIC_SDA_PIN_HIGH();
+	IIC_SDA_PIN_OUTPUT();
 }
 
 /**
@@ -85,10 +160,10 @@ void Write_IIC_Byte(unsigned char IIC_Byte)
  * IIC单数据写入 
  * 返回值 1:PASS、0:ERROR
  */
-unsigned char IIC_Write_Single_Data(unsigned char device_id, unsigned char reg_adr, unsigned char data)
+unsigned char IIC_Driver_Write_Single_Data(unsigned char device_id, unsigned char reg_adr, unsigned char data)
 {
 	IIC_Start();
-	Write_IIC_Byte(device_id); 		// 设备ID
+	Write_IIC_Byte(device_id << 1 & 0xFE); 		// 设备ID
 	IIC_Wait_Ack();
 	Write_IIC_Byte(reg_adr); 		// 设备寄存器地址
 	IIC_Wait_Ack();
@@ -103,14 +178,14 @@ unsigned char IIC_Write_Single_Data(unsigned char device_id, unsigned char reg_a
  * IIC多数据写入 
  * 返回值 1:PASS、0:ERROR
  */
-unsigned char IIC_Write_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *data, unsigned char data_len)
+unsigned char IIC_Driver_Write_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *pdata, unsigned char data_len)
 {
 	IIC_Start();
-	Write_IIC_Byte(device_id); 		// 设备ID
+	Write_IIC_Byte(device_id << 1 & 0xFE); 	// 设备ID bit0: 0写 1读
 	IIC_Wait_Ack();
-	Write_IIC_Byte(reg_adr); 		// 设备寄存器地址
+	Write_IIC_Byte(reg_adr); 			// 设备寄存器地址
 	IIC_Wait_Ack();
-	Write_IIC_Byte(*data);			// 寄存器写入数据
+	Write_IIC_Byte(*pdata);				// 寄存器写入数据
 	IIC_Wait_Ack();
 	IIC_Stop();
 	return 0;
@@ -121,8 +196,19 @@ unsigned char IIC_Write_Multi_Data(unsigned char device_id, unsigned char reg_ad
  * IIC单数据读取
  * 返回值 1:PASS、0:ERROR
  */
-unsigned char IIC_Read_Single_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *data)
+unsigned char IIC_Driver_Read_Single_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *pdata)
 {
+	IIC_Start();
+	Write_IIC_Byte(device_id << 1 & 0xFE);	// 设备ID bit0: 0写 1读
+	IIC_Wait_Ack();
+	Write_IIC_Byte(reg_adr); 			// 设备寄存器地址
+	IIC_Wait_Ack();
+	IIC_Start();
+	Write_IIC_Byte(device_id << 1 | 0x01);	// 设备ID bit0: 0写 1读
+	IIC_Wait_Ack();
+	Read_IIC_Byte(pdata);				// 寄存器写入数据
+	IIC_Send_Ack();
+	IIC_Stop();
 	return 0;
 }
 
@@ -131,8 +217,30 @@ unsigned char IIC_Read_Single_Data(unsigned char device_id, unsigned char reg_ad
  * IIC多数据读取
  * 返回值 1:PASS、0:ERROR
  */
-unsigned char IIC_Read_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *data, unsigned char data_len)
+unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *data, unsigned char data_len)
 {
+	unsigned char i=0;
+	IIC_Start();
+	Write_IIC_Byte(device_id << 1 & 0xFE);	// 设备ID bit0: 0写 1读
+	IIC_Wait_Ack();
+	Write_IIC_Byte(reg_adr); 			// 设备寄存器地址
+	IIC_Wait_Ack();
+	IIC_Start();
+	Write_IIC_Byte(device_id << 1 | 0x01);	// 设备ID bit0: 0写 1读
+	IIC_Wait_Ack();
+	for(; i < data_len; i++)
+	{
+		Read_IIC_Byte(data++);				// 寄存器写入数据
+		if(i== data_len -1)
+		{
+			IIC_Send_NAck();
+		}
+		else
+		{
+			IIC_Send_Ack();
+		}
+	}
+	IIC_Stop();
 	return 0;
 }
 

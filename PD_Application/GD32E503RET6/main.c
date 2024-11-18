@@ -37,6 +37,7 @@ OF SUCH DAMAGE.
 #include "systick.h"
 #include <stdio.h>
 #include "OLED/oled_check.h"
+#include "PD_Protocol/sw3516p_driver.h"
 
 #define ARRAYNUM(arr_nanme) (uint32_t)(sizeof(arr_nanme) / sizeof(*(arr_nanme)))
 #define BUFFER_SIZE (ARRAYNUM(tx_buffer))
@@ -72,6 +73,15 @@ static void led_flash(uint8_t times);
 static void usart_config(void);
 ErrStatus memory_compare(uint8_t *src, uint8_t *dst, uint16_t length);
 
+void GPIO_CTC_SYNC_Init(void)
+{
+    rcu_periph_clock_enable(RCU_GPIOA);
+    gpio_afio_port_config(AFIO_PCFA_PA8_AFCFG, ENABLE);
+    gpio_init(GPIOA, GPIO_MODE_AF_PP, GPIO_OSPEED_MAX, GPIO_PIN_8);
+    rcu_ckout0_config(RCU_CKOUT0SRC_CKSYS);
+
+}
+
 /*!
     \brief      main function
     \param[in]  none
@@ -80,15 +90,17 @@ ErrStatus memory_compare(uint8_t *src, uint8_t *dst, uint16_t length);
 */
 int main(void)
 {
-    /* initialize the LEDs */
-    test_status_led_init();
+    SystemInit();
+    GPIO_CTC_SYNC_Init();
+    // /* initialize the LEDs */
+    // test_status_led_init();
 
     /* configure NVIC and systick */
     nvic_irq_enable(UART4_IRQn, 0, 0);
     systick_config();
 
-    /* flash the LEDs for 1 time */
-    led_flash(1);
+    // /* flash the LEDs for 1 time */
+    // led_flash(1);
 
     /* initialize the USART */
     usart_config();
@@ -97,6 +109,13 @@ int main(void)
     usart_interrupt_enable(UART4, USART_INT_TBE);
 
     printf("SYS_Init_OK\r\n");
+    // SDA_Test();
+    // oled_main();
+    
+    while(1)
+    {
+        SW3516P_Init();  
+    }
 }
 
 /*!

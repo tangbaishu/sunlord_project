@@ -37,4 +37,4 @@
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h \
   ..\Hardware_Driver_Layer\OLED\oledfont.h \
   ..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h \
-  ..\.\systick.h
+  ..\.\systick.h D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
