@@ -2973,7 +2973,7 @@ Removing Unused input sections from the image.
     Removing led_function.o(.text), (0 bytes).
     Removing led_function.o(.ARM.exidx.text.LED_Check), (8 bytes).
     Removing pd_function.o(.text), (0 bytes).
-    Removing pd_function.o(.data.PD_Function), (8 bytes).
+    Removing pd_function.o(.data.PD_Function), (12 bytes).
     Removing oled.o(.text), (0 bytes).
     Removing oled.o(.text.OLED_WR_Byte), (38 bytes).
     Removing oled.o(.ARM.exidx.text.OLED_WR_Byte), (8 bytes).
@@ -3049,7 +3049,7 @@ Removing Unused input sections from the image.
     Removing sw3516p_driver.o(.text.SW3516P_Current_Limiting), (254 bytes).
     Removing sw3516p_driver.o(.ARM.exidx.text.SW3516P_Current_Limiting), (8 bytes).
 
-1757 unused section(s) (total 66940 bytes) removed from the image.
+1757 unused section(s) (total 66944 bytes) removed from the image.
 
 ==============================================================================
 

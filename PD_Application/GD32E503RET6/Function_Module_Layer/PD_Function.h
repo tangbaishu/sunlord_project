@@ -14,15 +14,15 @@ typedef enum
 
 typedef struct
 {
-	Port1_Output_Power;
-	Port2_Output_Power
+	uint16 Port1_Output_Power;
+	uint16 Port2_Output_Power;
 }PD_Output_Power_t;								// PD输出功率
 
 
 typedef struct
 {
 	SW3516P_Driver_t		*PD_Protocol_IC;	// PD协议IC驱动
-	Board_Input_Port_e 		Board_Input_Port;	// 板端插入端口信息
+	PD_Input_Port_e 		Board_Input_Port;	// 板端插入端口信息
 	PD_Output_Power_t		PD_Output_Power;	// PD输出功率
 }PD_Function_t;									// PD功能信息
 extern PD_Function_t PD_Function;
