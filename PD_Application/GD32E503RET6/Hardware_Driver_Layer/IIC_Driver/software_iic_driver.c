@@ -170,6 +170,7 @@ unsigned char IIC_Driver_Write_Single_Data(unsigned char device_id, unsigned cha
 	Write_IIC_Byte(data);			// 寄存器写入数据
 	IIC_Wait_Ack();
 	IIC_Stop();
+	printf("W Adr %#x : Value %#x \r\n", reg_adr, data);
 	return 0;
 }	
 
@@ -209,6 +210,7 @@ unsigned char IIC_Driver_Read_Single_Data(unsigned char device_id, unsigned char
 	Read_IIC_Byte(pdata);				// 寄存器写入数据
 	IIC_Send_Ack();
 	IIC_Stop();
+	printf("R Adr %#x : Value %#x \r\n", reg_adr, *pdata);
 	return 0;
 }
 

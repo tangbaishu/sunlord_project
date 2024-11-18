@@ -39,4 +39,5 @@
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h \
   ..\.\systick.h ..\Hardware_Driver_Layer\OLED\oled.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
+  ..\Function_Module_Layer\LED_Function.h

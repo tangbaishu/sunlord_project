@@ -1,4 +1,5 @@
-./output/main.o: ..\main.c \
+./output/led_driver.o: ..\Hardware_Driver_Layer\LED_Driver.c \
+  ..\Hardware_Driver_Layer\LED_Driver.h \
   ..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h \
   ..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
@@ -32,11 +33,4 @@
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_usart.h \
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h \
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h \
-  ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h \
-  ..\Utilities\gd32e503r_start.h ..\.\systick.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\Hardware_Driver_Layer\OLED\oled_check.h \
-  ..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.h \
-  ..\Hardware_Driver_Layer\IIC_Driver\iic_api.h \
-  ..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h \
-  ..\.\systick.h ..\Function_Module_Layer\LED_Function.h
+  ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h

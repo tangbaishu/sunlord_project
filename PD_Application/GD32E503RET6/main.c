@@ -38,6 +38,7 @@ OF SUCH DAMAGE.
 #include <stdio.h>
 #include "OLED/oled_check.h"
 #include "PD_Protocol/sw3516p_driver.h"
+#include "LED_Function.h"
 
 #define ARRAYNUM(arr_nanme) (uint32_t)(sizeof(arr_nanme) / sizeof(*(arr_nanme)))
 #define BUFFER_SIZE (ARRAYNUM(tx_buffer))
@@ -111,7 +112,11 @@ int main(void)
     printf("SYS_Init_OK\r\n");
     // SDA_Test();
     // oled_main();
-    
+    LED_Check();
+    LED_Function_List.LED_Function_OFF(1);
+    LED_Function_List.LED_Function_OFF(2);
+    LED_Function_List.LED_Function_OFF(3);
+    LED_Function_List.LED_Function_OFF(4);
     while(1)
     {
         SW3516P_Init();  

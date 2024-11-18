@@ -594,6 +594,18 @@
         </Group>
         <Group>
           <GroupName>Function_Module_Layer</GroupName>
+          <Files>
+            <File>
+              <FileName>LED_Function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Function_Module_Layer\LED_Function.c</FilePath>
+            </File>
+            <File>
+              <FileName>PD_Function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Function_Module_Layer\PD_Function.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Hardware_Driver_Layer</GroupName>
@@ -612,6 +624,16 @@
               <FileName>software_iic_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>LED_Driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware_Driver_Layer\LED_Driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Hardware_Driver_Layer\IIC_Driver\iic_api.c</FilePath>
             </File>
           </Files>
         </Group>

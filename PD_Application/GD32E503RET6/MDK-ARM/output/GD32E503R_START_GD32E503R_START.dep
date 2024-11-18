@@ -1,6 +1,6 @@
 Dependencies for Project 'GD32E503R_START', Target 'GD32E503R_START': (DO NOT MODIFY !)
 CompilerVersion: 6160000::V6.16::ARMCLANG
-F (..\main.c)(0x6735ACA8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/main.o -MD)
+F (..\main.c)(0x673ACFA8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/main.o -MD)
 I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
 I (..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h)(0x606148B1)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
@@ -39,9 +39,10 @@ I (..\Utilities\gd32e503r_start.h)(0x659CFAF9)
 I (..\.\systick.h)(0x659CFAF9)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
 I (..\Hardware_Driver_Layer\OLED\oled_check.h)(0x672D8522)
-I (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.h)(0x6735B2B0)
+I (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.h)(0x673AD9EA)
 I (..\Hardware_Driver_Layer\IIC_Driver\iic_api.h)(0x6735A959)
 I (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h)(0x6735991D)
+I (..\Function_Module_Layer\LED_Function.h)(0x673ACF14)
 F (..\gd32e50x_it.c)(0x672DAE7D)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/gd32e50x_it.o -MD)
 I (..\.\gd32e50x_it.h)(0x659CFAF9)
 I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
@@ -1175,6 +1176,84 @@ I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sq
 I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
 F (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Source\ARM\startup_gd32e50x_hd.s)(0x65A5E2F6)(--cpu=Cortex-M33.no_dsp --fpu=FPv5-SP -g --pd "__MICROLIB SETA 1"-I.\RTE\_GD32E503R_START-ID:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include-ID:\Keil_v5\GigaDevice\GD32E50x_DFP\1.3.2\Device\Include--pd "__UVISION_VERSION SETA 536"--pd "_RTE_ SETA 1"--pd "GD32E50x_HD SETA 1"--pd "_RTE_ SETA 1"--list .\list\startup_gd32e50x_hd.lst--xref -o .\output\startup_gd32e50x_hd.o--depend .\output\startup_gd32e50x_hd.d)
 F (..\readme.txt)(0x659CFAF1)()
+F (..\Function_Module_Layer\LED_Function.c)(0x673ACF63)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/led_function.o -MD)
+I (..\Function_Module_Layer\LED_Function.h)(0x673ACF14)
+I (..\Hardware_Driver_Layer\LED_Driver.h)(0x673ACEC5)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h)(0x606148B1)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_version.h)(0x606148B1)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_compiler.h)(0x606148B1)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv8.h)(0x60D3E8E2)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\system_gd32e50x.h)(0x6570144B)
+I (..\.\gd32e50x_libopt.h)(0x659CFAF9)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_adc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_bkp.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_can.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_crc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_ctc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dac.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dbg.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dma.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exti.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_gpio.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_shrtimer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_i2c.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_misc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_pmu.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rcu.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rtc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_spi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_timer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_usart.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
+I (..\.\systick.h)(0x659CFAF9)
+F (..\Function_Module_Layer\PD_Function.c)(0x673ADDBA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/pd_function.o -MD)
+I (..\Function_Module_Layer\PD_Function.h)(0x673ADFAE)
+I (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.h)(0x673AD9EA)
+I (..\Hardware_Driver_Layer\IIC_Driver\iic_api.h)(0x6735A959)
+I (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h)(0x6735991D)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h)(0x606148B1)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_version.h)(0x606148B1)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_compiler.h)(0x606148B1)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv8.h)(0x60D3E8E2)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\system_gd32e50x.h)(0x6570144B)
+I (..\.\gd32e50x_libopt.h)(0x659CFAF9)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_adc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_bkp.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_can.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_crc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_ctc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dac.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dbg.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dma.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exti.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_gpio.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_shrtimer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_i2c.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_misc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_pmu.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rcu.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rtc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_spi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_timer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_usart.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
+I (..\.\systick.h)(0x659CFAF9)
 F (..\Hardware_Driver_Layer\OLED\oled.c)(0x6731C69B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/oled.o -MD)
 I (..\Hardware_Driver_Layer\OLED\oled.h)(0x672DBB88)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
@@ -1256,7 +1335,7 @@ I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sq
 I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
 I (..\Hardware_Driver_Layer\OLED\bmp.h)(0x544CF1FF)
 I (..\.\systick.h)(0x659CFAF9)
-F (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.c)(0x6735A810)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/software_iic_driver.o -MD)
+F (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.c)(0x673AD468)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/software_iic_driver.o -MD)
 I (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h)(0x6735991D)
 I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
 I (..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h)(0x606148B1)
@@ -1294,8 +1373,82 @@ I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sq
 I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
 I (..\.\systick.h)(0x659CFAF9)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
-F (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.c)(0x6735C8D0)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/sw3516p_driver.o -MD)
-I (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.h)(0x6735B2B0)
+F (..\Hardware_Driver_Layer\LED_Driver.c)(0x673ACEC5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/led_driver.o -MD)
+I (..\Hardware_Driver_Layer\LED_Driver.h)(0x673ACEC5)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h)(0x606148B1)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_version.h)(0x606148B1)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_compiler.h)(0x606148B1)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv8.h)(0x60D3E8E2)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\system_gd32e50x.h)(0x6570144B)
+I (..\.\gd32e50x_libopt.h)(0x659CFAF9)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_adc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_bkp.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_can.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_crc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_ctc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dac.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dbg.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dma.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exti.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_gpio.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_shrtimer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_i2c.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_misc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_pmu.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rcu.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rtc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_spi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_timer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_usart.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
+F (..\Hardware_Driver_Layer\IIC_Driver\iic_api.c)(0x67319D94)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/iic_api.o -MD)
+I (..\Hardware_Driver_Layer\IIC_Driver\iic_api.h)(0x6735A959)
+I (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h)(0x6735991D)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h)(0x606148B1)
+I (D:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x603507D0)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_version.h)(0x606148B1)
+I (..\GD32E50x_Firmware_Library\CMSIS\cmsis_compiler.h)(0x606148B1)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\cmsis_armclang.h)(0x60D3E8E2)
+I (D:\Keil_v5\ARM\CMSIS\5.8.0\CMSIS\Core\Include\mpu_armv8.h)(0x60D3E8E2)
+I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\system_gd32e50x.h)(0x6570144B)
+I (..\.\gd32e50x_libopt.h)(0x659CFAF9)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_adc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_bkp.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_can.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_crc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_ctc.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dac.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dbg.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_dma.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_exti.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fmc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_fwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_gpio.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_shrtimer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_i2c.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_misc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_pmu.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rcu.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_rtc.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_spi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_timer.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_usart.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h)(0x65A5E2F7)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h)(0x65A5E2F6)
+I (..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h)(0x65A5E2F6)
+I (..\.\systick.h)(0x659CFAF9)
+F (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.c)(0x673AD9EA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m33+nodsp -mfpu=fpv5-sp-d16 -mfloat-abi=hard -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__MICROLIB -gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I ../. -I ../GD32E50x_Firmware_Library/CMSIS -I ../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include -I ../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include -I ../Utilities -I ../Application_Layer -I ../Business_Logic_Layer -I ../Function_Module_Layer -I ../Hardware_Driver_Layer -I ../Hardware_Driver_Layer/BSP-I./RTE/_GD32E503R_START-ID:/Keil_v5/ARM/CMSIS/5.8.0/CMSIS/Core/Include-ID:/Keil_v5/GigaDevice/GD32E50x_DFP/1.3.2/Device/Include-D__UVISION_VERSION="536" -D_RTE_ -DGD32E50x_HD -D_RTE_ -DGD32E50X -DGD32E50X_HD -DUSE_STDPERIPH_DRIVER-o ./output/sw3516p_driver.o -MD)
+I (..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.h)(0x673AD9EA)
 I (..\Hardware_Driver_Layer\IIC_Driver\iic_api.h)(0x6735A959)
 I (..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h)(0x6735991D)
 I (..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h)(0x65A5E2F6)
@@ -1336,3 +1489,4 @@ I (..\.\systick.h)(0x659CFAF9)
 I (..\Hardware_Driver_Layer\OLED\oled.h)(0x672DBB88)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x603507D0)
 I (D:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x603507D4)
+I (..\Function_Module_Layer\LED_Function.h)(0x673ACF14)

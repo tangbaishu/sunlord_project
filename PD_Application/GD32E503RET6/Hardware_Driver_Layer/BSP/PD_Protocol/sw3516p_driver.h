@@ -3,8 +3,19 @@
 
 #include "IIC_Driver/iic_api.h"
 
+#ifndef uint8
+#ifndef _DECA_UINT8_
+#define _DECA_UINT8_
 typedef unsigned char uint8;
-typedef unsigned int  uint16;				// 期待使用16位变量，但采用32bit时，该类型为32位
+#endif
+#endif
+
+#ifndef uint16
+#ifndef _DECA_UINT16_
+#define _DECA_UINT16_
+typedef unsigned short uint16;
+#endif
+#endif
 
 #define READ_DEVICE_VERSION
 
@@ -60,10 +71,10 @@ typedef unsigned int  uint16;				// 期待使用16位变量，但采用32bit时�
 #define FAST_CHARGE_CONFIG_5		0xC5	// 快充配置5
 #define FAST_CHARGE_CONFIG_6		0xCF	// 快充配置6
 
-
 typedef enum
 {
-	INPUT_OVER_VOLTAGE = 1,					// 输入过压保护
+	NORAML = 0,								// 正常状态（无保护事件）
+	INPUT_OVER_VOLTAGE,						// 输入过压保护
 	INPUT_UNDER_VOLTAGE,					// 输入欠压保护
 	OUTPUT_OVER_CURRENT,					// 输出过流保护
 	OUTPUT_SHORT_CIRCUIT,					// 输出短路保护
@@ -88,14 +99,13 @@ typedef struct
 	uint16	Temp_Onboard;					// 板载温度
 }IC_Work_Data_t;							// 芯片工作数据
 
-
 typedef struct 
 {
 	Protect_Event_e		Protect_Event;		// 保护事件
 	IC_Work_State_t		IC_Work_State;		// 芯片工作状态
 	IC_Work_Data_t		IC_Work_Data;		// 芯片工作数据
-}SW3516P_Driver_Info_t;
-extern SW3516P_Driver_Info_t	SW3516P_Driver_Info;
+}SW3516P_Driver_t;
+extern SW3516P_Driver_t	SW3516P_Driver;
 
 
 #ifdef READ_DEVICE_VERSION
