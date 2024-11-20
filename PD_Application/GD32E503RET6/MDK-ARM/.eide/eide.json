@@ -1,0 +1,399 @@
+{
+  "name": "GD32E503R_START",
+  "type": "ARM",
+  "dependenceList": [],
+  "srcDirs": [],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "Application",
+        "files": [
+          {
+            "path": "../main.c"
+          },
+          {
+            "path": "../gd32e50x_it.c"
+          },
+          {
+            "path": "../systick.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "CMSIS",
+        "files": [
+          {
+            "path": "../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Source/system_gd32e50x.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "GD32E50x_Peripherals",
+        "files": [
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_adc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_bkp.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_can.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_cmp.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_crc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_ctc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_dac.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_dbg.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_dma.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_enet.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_exmc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_exti.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_fmc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_fwdgt.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_gpio.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_i2c.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_misc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_pmu.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_rcu.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_rtc.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_sdio.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_shrtimer.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_spi.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_sqpi.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_timer.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_tmu.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_usart.c"
+          },
+          {
+            "path": "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Source/gd32e50x_wwdgt.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "GD32E50x_START",
+        "files": [
+          {
+            "path": "../Utilities/gd32e503r_start.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Startup",
+        "files": [
+          {
+            "path": "../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Source/ARM/startup_gd32e50x_hd.s"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Doc",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "Application_Layer",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "Business_Logic_Layer",
+        "files": [],
+        "folders": []
+      },
+      {
+        "name": "Function_Module_Layer",
+        "files": [
+          {
+            "path": "../Function_Module_Layer/LED_Function.c"
+          },
+          {
+            "path": "../Function_Module_Layer/PD_Function.c"
+          }
+        ],
+        "folders": []
+      },
+      {
+        "name": "Hardware_Driver_Layer",
+        "files": [
+          {
+            "path": "../Hardware_Driver_Layer/OLED/oled.c"
+          },
+          {
+            "path": "../Hardware_Driver_Layer/OLED/oled_check.c"
+          },
+          {
+            "path": "../Hardware_Driver_Layer/IIC_Driver/software_iic_driver.c"
+          },
+          {
+            "path": "../Hardware_Driver_Layer/LED_Driver.c"
+          },
+          {
+            "path": "../Hardware_Driver_Layer/IIC_Driver/iic_api.c"
+          }
+        ],
+        "folders": [
+          {
+            "name": "BSP",
+            "files": [
+              {
+                "path": "../Hardware_Driver_Layer/BSP/PD_Protocol/sw3516p_driver.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      },
+      {
+        "name": "::CMSIS",
+        "files": [],
+        "folders": []
+      }
+    ]
+  },
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": ".pack/GigaDevice/GD32E50x_DFP.1.3.1",
+  "miscInfo": {
+    "uid": "046e320f95407fea369859ae3df20224"
+  },
+  "targets": {
+    "GD32E503R_START": {
+      "excludeList": [],
+      "toolchain": "AC6",
+      "compileConfig": {
+        "cpuType": "Cortex-M33",
+        "floatingPointHardware": "single",
+        "scatterFilePath": "output/Project.sct",
+        "useCustomScatterFile": false,
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x20000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x8000000",
+                "size": "0x80000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "",
+        "cpuInfo": {
+          "vendor": "null",
+          "cpuName": "null"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "custom_dep": {
+        "name": "default",
+        "incList": [
+          ".",
+          "..",
+          "../GD32E50x_Firmware_Library/CMSIS",
+          "../GD32E50x_Firmware_Library/CMSIS/GD/GD32E50x/Include",
+          "../GD32E50x_Firmware_Library/GD32E50x_standard_peripheral/Include",
+          "../Utilities",
+          "../Application_Layer",
+          "../Business_Logic_Layer",
+          "../Function_Module_Layer",
+          "../Hardware_Driver_Layer",
+          "../Hardware_Driver_Layer/BSP",
+          "RTE/_GD32E503R_START"
+        ],
+        "libList": [],
+        "defineList": [
+          "GD32E50X",
+          "GD32E50X_HD",
+          "USE_STDPERIPH_DRIVER"
+        ]
+      },
+      "builderOptions": {
+        "AC6": {
+          "version": 3,
+          "beforeBuildTasks": [],
+          "afterBuildTasks": [],
+          "global": {
+            "use-microLIB": true,
+            "output-debug-info": "enable"
+          },
+          "c/cpp-compiler": {
+            "optimization": "level-0",
+            "language-c": "c99",
+            "language-cpp": "c++11",
+            "link-time-optimization": false,
+            "one-elf-section-per-function": true,
+            "short-enums#wchar": true,
+            "warnings": "ac5-like-warnings"
+          },
+          "asm-compiler": {
+            "$use": "asm-auto"
+          },
+          "linker": {
+            "output-format": "elf",
+            "misc-controls": "--diag_suppress=L6329",
+            "xo-base": "",
+            "ro-base": "0x08000000",
+            "rw-base": "0x20000000"
+          }
+        }
+      }
+    }
+  },
+  "version": "3.5"
+}
