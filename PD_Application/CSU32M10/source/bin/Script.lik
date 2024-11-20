@@ -1,0 +1,20 @@
+version:Mon Aug 08 15:27:53 2016
+
+bodyname:"CSU32P20"
+bodyseries:"CSU32PXX"
+bodyconfig:"D:\chipsea\CSU_IDE V5.3.0\chipsea\project\body\CSU32PXX\CSU32P20\ChipInfo.conf"
+options:Fill 0xffff
+codeoption:"0x0800:0xf807;"
+codeoffset:"0"
+codesize:"0x7ff"
+limitcodesize:"0x7FF"
+appendcodesize:"0x000"
+bankcount:"1"
+input:"D:\CSU32P20\CSU32P20_C_Demo\csu32p20_gpio\source\csu32p20_gpio\Release\csu32p20_gpio.obj","D:\CSU32P20\CSU32P20_C_Demo\csu32p20_gpio\source\csu32p20_gpio\Release\main.obj","D:\CSU32P20\CSU32P20_C_Demo\csu32p20_gpio\source\csu32p20_gpio\Release\SysRegDefine.obj","D:\CSU32P20\CSU32P20_C_Demo\csu32p20_gpio\source\csu32p20_gpio\Release\cstartup.obj"
+library:"D:\chipsea\CSU_IDE V5.3.0\chipsea\tools\Compiler\C\libcscc.lib"
+temppath:"D:/CSU32P20/CSU32P20_C_Demo/csu32p20_gpio/source/csu32p20_gpio/Release\"
+outputbin:"D:/CSU32P20/CSU32P20_C_Demo/csu32p20_gpio/source/csu32p20_gpio/Release\csu32p20_gpio.hex"
+;example begin
+;locate: CSCC_SECTION_1 at 0x80
+;locate: CSCC_SECTION_2 after CSCC_INIT_1
+;example end

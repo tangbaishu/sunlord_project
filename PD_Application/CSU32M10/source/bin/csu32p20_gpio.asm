@@ -1,0 +1,58 @@
+.stabs "D:\\CSU32P20\\CSU32P20_C_Demo\\csu32p20_gpio\\source\\csu32p20_gpio\\",0x64,0,0,0
+.stabs "D:\\CSU32P20\\CSU32P20_C_Demo\\csu32p20_gpio\\source\\csu32p20_gpio\\csu32p20_gpio.c",0x64,0,0,0
+.stabs "int:t1=r1;-32768;32767;",0x80,0,0,0
+.stabs "unsigned int:t2=r2;0;65535;",0x80,0,0,0
+.stabs "long int:t3=r3;-2147483648;2147483647;",0x80,0,0,0
+.stabs "unsigned long int:t4=r4;0;4294967295;",0x80,0,0,0
+.stabs "long long unsigned int:t6=r6;0;4294967295;",0x80,0,0,0
+.stabs "short int:t7=r7;-32768;32767;",0x80,0,0,0
+.stabs "short unsigned int:t8=r8;0;65535;",0x80,0,0,0
+.stabs "char:t9=r9;-128;127;",0x80,0,0,0
+.stabs "unsigned char:t10=r10;0;255;",0x80,0,0,0
+.stabs "_Bool:t11=r11;0;1;",0x80,0,0,0
+.stabs "sbit:t12=r12;0;1;",0x80,0,0,0
+.stabs "float:t13=r13;4;0;",0x80,0,0,0
+.stabs "double:t14=r14;4;0;",0x80,0,0,0
+.stabs "long double:t15=r15;4;0;",0x80,0,0,0
+.stabs "void:t16=r10;0;255;",0x80,0,0,0
+.include "csccCond.inc"
+.include "csccCmp.inc"
+.include "csccShift.inc"
+	_csu32p20_gpio_demo_sec .section rom
+	.global	_csu32p20_gpio_demo
+_csu32p20_gpio_demo:
+Lfunc_begin0:
+.stabs "csu32p20_gpio_demo:f:16", 0x24,0,0,_csu32p20_gpio_demo
+.stabn 0xc0, 0, 0, _csu32p20_gpio_demo
+.stabn 0xe0, 0, 0, _csu32p20_gpio_demo
+LM0:
+.stabn	0x44, 0, 32, LM0-_csu32p20_gpio_demo
+Lfunc_begin1:
+LM1:
+.stabn	0x44, 0, 33, LM1-_csu32p20_gpio_demo
+	banksel 0
+btfss _PT1_1, _PT1_1
+goto LBB0_2
+LBB0_1:
+LM2:
+.stabn	0x44, 0, 35, LM2-_csu32p20_gpio_demo
+Ltmp1:
+	bsf _PT1_0, _PT1_0
+LM3:
+.stabn	0x44, 0, 36, LM3-_csu32p20_gpio_demo
+	goto LBB0_3
+Ltmp2:
+LBB0_2:
+LM4:
+.stabn	0x44, 0, 39, LM4-_csu32p20_gpio_demo
+	bcf _PT1_0, _PT1_0
+Ltmp3:
+LBB0_3:
+LM5:
+.stabn	0x44, 0, 41, LM5-_csu32p20_gpio_demo
+	return
+Ltmp4:
+Lfunc_end0:
+Lfunc_end1:
+LM6:
+.stabf LM6-_csu32p20_gpio_demo

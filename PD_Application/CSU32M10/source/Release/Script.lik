@@ -1,0 +1,20 @@
+version:Mon Aug 08 15:27:53 2016
+
+bodyname:"CSU32M10"
+bodyseries:"CSU32MXX"
+bodyconfig:"D:\Chipsea\CSU-IDE\chipsea\project\body\CSU32MXX\CSU32M10\ChipInfo.conf"
+options:Fill 0xffff
+codeoption:"0x0800:0xfa05;0x0801:0x07f8;0x0802:0x000f;"
+codeoffset:"0"
+codesize:"0x7ff"
+limitcodesize:"0x7FF"
+appendcodesize:"0x000"
+bankcount:"1"
+input:"D:\Work_Area\Software\PD_Application\CSU32M10\source\Release\csu32m10_gpio.obj","D:\Work_Area\Software\PD_Application\CSU32M10\source\Release\csu32m10_timer0.obj","D:\Work_Area\Software\PD_Application\CSU32M10\source\Release\main.obj","D:\Work_Area\Software\PD_Application\CSU32M10\source\Release\SysRegDefine.obj","D:\Work_Area\Software\PD_Application\CSU32M10\source\Release\cstartup.obj"
+library:"D:\Chipsea\CSU-IDE\chipsea\tools\Compiler\C\libcscc.lib"
+temppath:"D:/Work_Area/Software/PD_Application/CSU32M10/source/Release\"
+outputbin:"D:/Work_Area/Software/PD_Application/CSU32M10/source/Release\csu32m10_gpio.hex"
+;example begin
+;locate: CSCC_SECTION_1 at 0x80
+;locate: CSCC_SECTION_2 after CSCC_INIT_1
+;example end

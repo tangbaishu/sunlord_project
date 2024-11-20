@@ -1,14 +1,14 @@
 #include "LED_Driver.h"
 
-#define LED1_ON_LEVEL()		gpio_bit_set(LED1_GPIO_PORT, LED1_GPIO_PIN)
-#define LED2_ON_LEVEL()		gpio_bit_set(LED2_GPIO_PORT, LED2_GPIO_PIN)
-#define LED3_ON_LEVEL()		gpio_bit_set(LED3_GPIO_PORT, LED3_GPIO_PIN)
-#define LED4_ON_LEVEL()		gpio_bit_set(LED4_GPIO_PORT, LED4_GPIO_PIN)
+#define LED1_ON_LEVEL()		GPIO_BOP(LED1_GPIO_PORT) = LED1_GPIO_PIN
+#define LED2_ON_LEVEL()		GPIO_BOP(LED2_GPIO_PORT) = LED2_GPIO_PIN
+#define LED3_ON_LEVEL()		GPIO_BOP(LED3_GPIO_PORT) = LED3_GPIO_PIN
+#define LED4_ON_LEVEL()		GPIO_BOP(LED4_GPIO_PORT) = LED4_GPIO_PIN
 
-#define LED1_OFF_LEVEL()	gpio_bit_reset(LED1_GPIO_PORT, LED1_GPIO_PIN)
-#define LED2_OFF_LEVEL()	gpio_bit_reset(LED2_GPIO_PORT, LED2_GPIO_PIN)
-#define LED3_OFF_LEVEL()	gpio_bit_reset(LED3_GPIO_PORT, LED3_GPIO_PIN)
-#define LED4_OFF_LEVEL()	gpio_bit_reset(LED4_GPIO_PORT, LED4_GPIO_PIN)
+#define LED1_OFF_LEVEL()	GPIO_BC(LED1_GPIO_PORT) = LED1_GPIO_PIN
+#define LED2_OFF_LEVEL()	GPIO_BC(LED2_GPIO_PORT) = LED2_GPIO_PIN
+#define LED3_OFF_LEVEL()	GPIO_BC(LED3_GPIO_PORT) = LED3_GPIO_PIN
+#define LED4_OFF_LEVEL()	GPIO_BC(LED4_GPIO_PORT) = LED4_GPIO_PIN
 
 #define LED1_TURN()			do{if(gpio_output_bit_get(LED1_GPIO_PORT, LED1_GPIO_PIN)){LED1_OFF_LEVEL();}else{LED1_ON_LEVEL();}}while(0)
 #define LED2_TURN()			do{if(gpio_output_bit_get(LED2_GPIO_PORT, LED2_GPIO_PIN)){LED2_OFF_LEVEL();}else{LED2_ON_LEVEL();}}while(0)
@@ -17,6 +17,10 @@
 
 void LED_Driver_Init(void)
 {
+	rcu_periph_clock_enable(LED1_GPIO_CLOCK);
+	rcu_periph_clock_enable(LED2_GPIO_CLOCK);
+	rcu_periph_clock_enable(LED3_GPIO_CLOCK);
+	rcu_periph_clock_enable(LED4_GPIO_CLOCK);
 	gpio_init(LED1_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_MAX, LED1_GPIO_PIN);
 	gpio_init(LED2_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_MAX, LED2_GPIO_PIN);
 	gpio_init(LED3_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_MAX, LED3_GPIO_PIN);

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UserOptions>
+	<GPlusSetting>
+	</GPlusSetting>
+	<OpenState>
+		<OpenFiles>
+		</OpenFiles>
+		<OpenFolders>
+			<{0E09108E-EF5C-45C2-ACC8-C3E60B9AF738}>
+				Expanded="TRUE"
+				Name="include"
+				Name="sample"
+				Name="inc"
+				Name="src"
+				Name="System Files"
+				Name="Linker Files"
+			</{0E09108E-EF5C-45C2-ACC8-C3E60B9AF738}>
+		</OpenFolders>
+	</OpenState>
+	<UI_dockbar_disassembler>
+		AddressList=""
+	</UI_dockbar_disassembler>
+	<UI_dockbar_memory1>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory1>
+	<UI_dockbar_memory2>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory2>
+	<UI_dockbar_memory3>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory3>
+	<UI_dockbar_memory4>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory4>
+	<UI_dockbar_memory5>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory5>
+	<UI_dockbar_registers>
+		ActiveRegGroup="SFR"
+	</UI_dockbar_registers>
+</UserOptions>

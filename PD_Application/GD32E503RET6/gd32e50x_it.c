@@ -175,11 +175,11 @@ void UART4_IRQHandler(void)
     if (RESET != usart_interrupt_flag_get(UART4, USART_INT_FLAG_RBNE))
     {
         /* receive data */
-        rx_buffer[rx_count++] = usart_data_receive(UART4);
-        if (rx_count >= rx_buffer_size)
-        {
-            usart_interrupt_disable(UART4, USART_INT_RBNE);
-        }
+        // rx_buffer[rx_count++] = usart_data_receive(UART4);
+        // if (rx_count >= rx_buffer_size)
+        // {
+        //     usart_interrupt_disable(UART4, USART_INT_RBNE);
+        // }
     }
 
     if (RESET != usart_interrupt_flag_get(UART4, USART_INT_FLAG_TBE))

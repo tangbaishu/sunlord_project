@@ -1,6 +1,8 @@
 #include "IIC_Driver/software_iic_driver.h"
 #include "stdio.h"
 
+void delay_10us(unsigned char n);
+#define IIC_DELAY_10US(x)		delay_10us(x)
 
 void software_iic_Init(void)
 {
@@ -28,15 +30,19 @@ void delay_10us(unsigned char n)
 	}
 }
 
-void SDA_Test(void)
+/**
+ * @brief 用于校验 IIC_DELAY_10US 的准确性
+ * 
+ */
+void delay_check(void)
 {
 	software_iic_Init();
 	while (1)
 	{
 		IIC_SDA_PIN_LOW();
-		delay_10us(1);
+		IIC_DELAY_10US(1);
 		IIC_SDA_PIN_INPUT();
-		delay_10us(1);
+		IIC_DELAY_10US(1);
 		IIC_SDA_PIN_OUTPUT();
 	}
 }
@@ -51,11 +57,11 @@ void IIC_Start(void)
 	IIC_SCL_PIN_HIGH();
 	IIC_SCL_PIN_OUTPUT();
 
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SDA_PIN_LOW();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SCL_PIN_LOW();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 }
 
 /**********************************************
@@ -66,9 +72,9 @@ void IIC_Stop(void)
 	IIC_SDA_PIN_LOW();
 	IIC_SDA_PIN_OUTPUT();
 	IIC_SCL_PIN_HIGH();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SDA_PIN_HIGH();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SDA_PIN_INPUT();
 	IIC_SCL_PIN_INPUT();
 }
@@ -78,9 +84,9 @@ void IIC_Wait_Ack(void)
 	IIC_SDA_PIN_INPUT();
 	while (IIC_SDA_PIN_READ());
 	IIC_SCL_PIN_HIGH();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SCL_PIN_LOW();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SDA_PIN_LOW();
 	IIC_SDA_PIN_OUTPUT();
 }
@@ -89,17 +95,17 @@ void IIC_Send_Ack(void)
 {
 	IIC_SDA_PIN_LOW();
 	IIC_SCL_PIN_HIGH();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SCL_PIN_LOW();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 }
 
 void IIC_Send_NAck(void)
 {
 	IIC_SCL_PIN_HIGH();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	IIC_SCL_PIN_LOW();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 }
 
 /**********************************************
@@ -114,7 +120,6 @@ void Write_IIC_Byte(unsigned char IIC_Byte)
 	for (i = 0; i < 8; i++)
 	{
 		m = da;
-		//	IIC_SCL_PIN_LOW();
 		m = m & 0x80;
 		if (m == 0x80)
 		{
@@ -123,9 +128,9 @@ void Write_IIC_Byte(unsigned char IIC_Byte)
 		else
 			IIC_SDA_PIN_LOW();
 		da = da << 1;
-		delay_10us(1);
+		IIC_DELAY_10US(1);
 		IIC_SCL_PIN_HIGH();
-		delay_10us(1);
+		IIC_DELAY_10US(1);
 		IIC_SCL_PIN_LOW();
 	}
 }
@@ -139,17 +144,17 @@ void Read_IIC_Byte(unsigned char *IIC_Byte)
 	unsigned char m, da;
 	*IIC_Byte = 0;
 	IIC_SDA_PIN_INPUT();
-	delay_10us(1);
+	IIC_DELAY_10US(1);
 	for (i = 0; i < 8; i++)
 	{
 		IIC_SCL_PIN_HIGH();
-		delay_10us(1);
+		IIC_DELAY_10US(1);
 		if(IIC_SDA_PIN_READ())
 		{
 			*IIC_Byte |= 0x80>>i;
 		}
 		IIC_SCL_PIN_LOW();
-		delay_10us(1);
+		IIC_DELAY_10US(1);
 	}
 	IIC_SDA_PIN_HIGH();
 	IIC_SDA_PIN_OUTPUT();

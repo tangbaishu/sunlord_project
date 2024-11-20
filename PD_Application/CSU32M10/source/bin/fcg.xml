@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-2"?>
+<Functions>
+	<CSCC_INIT_GLOBAL_VAR>
+	</CSCC_INIT_GLOBAL_VAR>
+	<CSCC_INIT_SRAM_TO_ZERO>
+	</CSCC_INIT_SRAM_TO_ZERO>
+	<CSCC_INTERRUPT_VECTOR>
+	</CSCC_INTERRUPT_VECTOR>
+	<CSCC_INIT_CODE>
+	</CSCC_INIT_CODE>
+	<main>
+		<csu32p20_gpio_demo>
+		</csu32p20_gpio_demo>
+	</main>
+	<INT_FUNCTION>
+	</INT_FUNCTION>
+	<csu32p20_gpio_demo>
+	</csu32p20_gpio_demo>
+</Functions>

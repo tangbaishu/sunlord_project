@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"csu32m10.h": "c",
+		"csu32m10_gpio.h": "c",
+		"csu32m10_timer0.h": "c"
+	}
+}

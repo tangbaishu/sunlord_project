@@ -1,0 +1,27 @@
+﻿# Generalplus IDE Solution File, Format Version 1.0.0
+# Warning: do not edit or delete this solution file!
+
+# ////////////////////////////////////////////////////
+# Begin Solution
+<Solution>
+	NAME : csu32m10_gpio
+	GUID : {A6245BF3-50E8-4EBE-BD8E-B3A7B95EDA3A}
+	STARTUP : {0E09108E-EF5C-45C2-ACC8-C3E60B9AF738}
+	ACTIVECONFIGURATION : Release
+</Solution>
+# End Solution
+
+# ////////////////////////////////////////////////////
+# Begin Project
+<Projects>
+	COUNT : 1
+	<Project1>
+		NAME : csu32m10_gpio
+		GUID : {0E09108E-EF5C-45C2-ACC8-C3E60B9AF738}
+		PATH : .\csu32m10_gpio.csuprjx
+		Dependencies : 
+	</Project1>
+</Projects>
+
+# End Project
+# ////////////////////////////////////////////////////

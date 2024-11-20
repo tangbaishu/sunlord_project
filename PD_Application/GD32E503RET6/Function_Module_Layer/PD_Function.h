@@ -27,10 +27,13 @@ typedef struct
 }PD_Function_t;									// PD功能信息
 extern PD_Function_t PD_Function;
 
-void Board_Port_Detection(void);				// 板载端口检测
-// 板载输出
-// 板载异常处理
-// 
+// PD运行配置（输出功率、SRC_CAP广播）
+// PD输出端口配置
+void PD_Load_Detection(void);				// PD负载插入检测
+// PD输出功率采集
+// PD运行状态信息（输入电压、端口1&端口2输出电压、端口1&端口2输出电流、板载NTC温度）
+// PD异常事件处理
+// PD
 
 
 #endif
