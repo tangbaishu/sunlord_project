@@ -58,9 +58,9 @@ typedef enum
  */
 typedef enum
 {
-    CABLE_COMPENSAVE_VALUE_100MOHM = 0,        //!< 100 mohm
-    CABLE_COMPENSAVE_VALUE_65MOHM,             //!< 65 mohm
-} cable_compensave_value_e;
+    CABLE_COMPENSAVE_VALUE_100MOHM = 0,         //!< 100 mohm
+    CABLE_COMPENSAVE_VALUE_65MOHM,              //!< 65 mohm
+} cable_compensave_value_e;                     // 电缆补偿值
 
 /**
  * Fix voltage output offset

@@ -62,7 +62,7 @@ __heap_limit
 
 __Vectors       DCD     __initial_sp              ; Top of Stack
                 DCD     Reset_Handler             ; Reset Handler
-                DCD     NMI_Handler               ; NMI Handler
+                DCD     NMI_Handler               ; NMI Handler         Watchdog
                 DCD     HardFault_Handler         ; Hard Fault Handler
                 DCD     0                         ; Reserved
                 DCD     0                         ; Reserved

@@ -7,6 +7,14 @@
 #ifndef ZR_GPIO_H
 #define ZR_GPIO_H
 
+/**
+ * 支持上/下拉使能，默认上拉电阻为 10KΩ，其中 GPIO0/1/2/3/6/7/10/11/14 还可以配置上拉电阻为 4 KΩ
+ * 支持 push-pull 和 open drain 类型；
+ * 支持高/低电平触发、上升/下降沿及上下沿（双沿）触发中断；
+ * 支持多功能 pin 复用；
+ * IO 电平为 3.3V；
+ */
+
 #include "system.h"
 
 #ifdef __cplusplus
@@ -14,16 +22,15 @@ extern "C" {
 #endif
 
 // clang-format off
-
 /** gpio_id 0~14 */
-#define GPIO0                (0x00000001)
-#define GPIO1                (0x00000002)
-#define GPIO2                (0x00000004)
-#define GPIO3                (0x00000008)
+#define GPIO0                (0x00000001)   // 可二次开发 复用项： gpio0_func_sel_e
+#define GPIO1                (0x00000002)   // 可二次开发 复用项： gpio1_func_sel_e
+#define GPIO2                (0x00000004)   // 可二次开发 复用项： gpio2_func_sel_e
+#define GPIO3                (0x00000008)   // 可二次开发 复用项： gpio3_func_sel_e
 #define GPIO4                (0x00000010)
 #define GPIO5                (0x00000020)
-#define GPIO6                (0x00000040)
-#define GPIO7                (0x00000080)
+#define GPIO6                (0x00000040)   // 可二次开发 复用项： gpio4_func_sel_e
+#define GPIO7                (0x00000080)   // 可二次开发 复用项： gpio5_func_sel_e
 #define GPIO8                (0x00000100)
 #define GPIO9                (0x00000200)
 #define GPIO10               (0x00000400)

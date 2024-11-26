@@ -21,8 +21,8 @@ void Serail_Init(u32 baudrate)
 {
     /* uart pinmux */
     Rcc_Module_Clk_Enable(GPIO_ID);
-    Gpio_Function_Select(GPIO0, FUNCTION_SEL1); /* tx */
-    Gpio_Function_Select(GPIO1, FUNCTION_SEL1); /* rx */
+    Gpio_Function_Select(GPIO6, FUNCTION_SEL6); /* tx */
+    Gpio_Function_Select(GPIO7, FUNCTION_SEL6); /* rx */
 
     /* clk,reset */
     Rcc_Module_Rst(UART_ID);

@@ -164,7 +164,7 @@ void I2c_Master_Freq_Set(uint8_t freq);
 void I2c_Master_Device_Addr_Set(u8 device_addr);
 
 /**
- * @brief  Get I2C master pending flag set or not
+ * @brief  Get I2C master pending flag set or not 是否设置I2C主挂起标志
  * @param  pending I2C master pending
  *         This parameter can be:
  *         I2C_M_FINISH_PENGING

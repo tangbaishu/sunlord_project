@@ -1,0 +1,80 @@
+
+{
+//设置 字体编码格式
+"files.encoding": "utf8",
+//设置字体大小
+"editor.fontSize": 14,
+// 重新设定tabsize
+"editor.tabSize": 4,
+//延时保存
+"files.autoSave": "onFocusChange",
+//延时保存时间
+"files.autoSaveDelay": 10,
+/**
+*	C/C++ 已声明变量名称提升
+*	Tag Parser: 提供非上下文感知的“模糊”结果。
+*	Default: 通过单独的 IntelliSense 流程提供上下文感知结果。
+*/
+"C_Cpp.intelliSenseEngine": "default",
+
+// 在使用搜索功能时，将这些文件夹/文件排除在外
+"search.exclude": 
+	{
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/target": true,
+		"**/logs": true,
+		"**/SL_Prj":true,
+		"**/MDK-ARM":true
+	}, 
+// 这些文件将不会显示在工作空间中
+"files.exclude": 
+{	
+	//排除文件夹格式
+	"**/.git": true,
+	"**/.svn": true,
+	"**/.hg": true,
+	"**/CVS": true,
+	"**/.DS_Store": true,
+	"**/.mxproject":true,
+	"**/SL_Prj":true,
+	"**/MDK-ARM":true,
+	//排除文件格式
+	"**/*.ioc":true,
+	"**/*.jflash":true,
+	"**/*.js": {
+		"when": "$(basename).ts" //ts编译后生成的js文件将不会显示在工作空中
+	},
+	"**/node_modules": true
+},
+"files.associations": {
+	"string": "c",
+	"stdio.h": "c",
+	"gd32f4xx.h": "c",
+	"system_gd32f4xx.h": "c",
+	"oled.h": "c",
+	"oledfont.h": "c",
+	"bmp.h": "c",
+	"gd32e50x.h": "c",
+	"gd32e50x_libopt.h": "c",
+	"software_iic_driver.h": "c",
+	"core_cm33.h": "c",
+	"oled_check.h": "c",
+	"iic_api.h": "c",
+	"limits": "cpp",
+	"memory": "cpp",
+	"zr_gpio.h": "c",
+	"zr_systick.h": "c",
+	"zr_i2c.h": "c",
+	"i2c_master_driver.h": "c",
+	"oled_display.h": "c",
+	"stdlib.h": "c",
+	"zr_btm.h": "c",
+	"zr_nvic.h": "c"
+},
+"commentTranslate.hover.enabled": true,
+
+
+
+
+}

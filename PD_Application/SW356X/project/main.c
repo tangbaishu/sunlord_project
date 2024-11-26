@@ -4,6 +4,12 @@
  * @brief Main program body
  * @author SD1 & SW team
  ****************************************************************************/
+#include "base_time_driver.h"
+#include "OLED/oled_check.h"
+#include "uart_driver.h"
+#include "LED_Driver/led_driver.h"
+#include "i2c_master_driver.h"
+
 #include "api.h"
 #include "config.h"
 #include "ufcs_caps.h"
@@ -22,6 +28,7 @@
 #include "i2c_slave.h"
 
 #include <stdio.h>
+#define USER_DRIVER_CHECK
 #define DEBUG_PRINTF_OPEN
 // #define POWER_CALLBACK
 // #define TRACE_PROTOCOL
@@ -33,6 +40,8 @@
 // #define I2C_SLAVE_TEST
 // #define GATE_FORCE_CTRL
 // #define LOG_GPIO
+#undef CUSTOMIZE_CFG
+#define CUSTOMIZE_CFG
 
 #ifdef CUSTOMIZE_CFG
 static const ufcs_output_cap_t ufcs100wOutputCap[] = {
@@ -242,7 +251,7 @@ int main(void)
 #ifdef CUSTOMIZE_CFG
     /// get system config, it shall be after Device_Init()
     config_data_t* config = Config_Get();
-    config->portMode = SINGLE_C_MODE;        // set to single c mode
+    config->portMode = DUO_CC_MODE;        // set to single c mode
 
 #ifdef A_C_NOLOAD_TRIGGER
     config->portMode = DUO_CA_MODE;        // set to A+C mode
@@ -365,6 +374,12 @@ int main(void)
     printf("\nzr2067_app: %s %s\n", __DATE__, __TIME__);
 #endif
 
+#if defined(USER_DRIVER_CHECK)
+    LED_Driver_Check();
+    I2C_Master_Check();
+    Base_Time_Driver_Check();
+#endif
+
 #ifdef POWER_CALLBACK
     Device_Register_Power_Adjust_Hook(PowerAdjust);
 #endif
@@ -419,7 +434,6 @@ int main(void)
 #ifdef I2C_SLAVE_TEST
     I2c_Slave_Policy_Init();
 #endif   
-
 
 
     while (1)
