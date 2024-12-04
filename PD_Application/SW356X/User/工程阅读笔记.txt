@@ -1,0 +1,18 @@
+XID（XHCI ID）
+	含义：XID是扩展的标识符，用于USB Type-C和USB PD环境中，标识具体的产品或组件。XID提供了一种方式，用于在USB PD协议中识别和区分不同的设备或端口。
+	作用：XID通常用于电子标记线缆（e-marked cables）和USB Type-C端口，以提供关于设备身份和能力的信息，如速度和电流承载能力等
+VID（Vendor ID）
+	含义：VID代表供应商ID，它是由USB-IF（USB Implementers Forum）分配给每个USB设备制造商的唯一标识符。每个制造商在制造USB设备时都会使用自己的VID，以确保设备的唯一性。
+	作用：VID用于识别USB设备的制造商，操作系统和软件可以通过VID来识别连接的设备，并加载相应的驱动程序
+PID（Product ID）
+	含义：PID代表产品ID，它是由设备制造商分配给其每个产品的唯一标识符。PID用于区分同一制造商生产的不同产品型号。
+	作用：PID与VID一起使用，以唯一标识特定的USB设备型号。操作系统可以通过VID和PID的组合来识别和加载特定设备的驱动程序
+bcdDevice
+	定义：bcdDevice，即设备版本号（Binary Coded Decimal Device），是一个采用BCD编码格式的字段，用于表示USB设备的版本信息。
+	功能：bcdDevice的主要功能是标识USB设备的固件版本号，它允许操作系统和用户了解设备的软件版本，对于设备管理和驱动程序匹配非常重要。
+	作用：
+		设备识别：bcdDevice与idVendor（厂商ID）和idProduct（产品ID）一起，形成设备的唯一标识符，帮助操作系统识别和管理设备。
+		驱动程序匹配：在Windows中，bcdDevice作为硬件ID的一部分，用于匹配和加载相应的驱动程序。
+		固件更新：bcdDevice可以指示设备的固件版本，对于固件更新和维护具有指导意义。
+	节点：
+		设备描述符（Device Descriptor）：bcdDevice是USB设备描述符中的一个字段，该描述符总长度为18字节，bcdDevice位于其中，用于存储设备的版本信息。

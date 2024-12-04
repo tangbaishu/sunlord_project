@@ -58,7 +58,7 @@ unsigned char IIC_Driver_Read_Single_Data(unsigned char device_id, unsigned char
  * IIC多数据读取
  * 返回值 1:PASS、0:ERROR
  */
-unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *data, unsigned char data_len);
+unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *pdata, unsigned char data_len);
 
 void Write_IIC_Command(unsigned char IIC_Command);
 void Write_IIC_Data(unsigned char IIC_Data);

@@ -833,8 +833,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\Hardware_Driver_Layer\BSP\PD_Protocol\sw3516p_driver.c</PathWithFileName>
-      <FilenameWithoutPath>sw3516p_driver.c</FilenameWithoutPath>
+      <PathWithFileName>..\Hardware_Driver_Layer\BSP\PD_Protocol\sw6233_driver.c</PathWithFileName>
+      <FilenameWithoutPath>sw6233_driver.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

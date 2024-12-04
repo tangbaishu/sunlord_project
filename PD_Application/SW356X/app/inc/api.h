@@ -4,6 +4,7 @@
  * @brief ZR2067 Application development interfaces
  * @author SD1 & SW team
  ****************************************************************************/
+// 快充相关的API接口
 #ifndef API_H
 #define API_H
 

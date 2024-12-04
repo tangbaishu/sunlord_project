@@ -90,7 +90,7 @@ extern "C" {
  * @param max_ma max current in mA unit
  * @param min_mv min voltage in mV unit
  * @param max_mv max voltage in mV unit
- * @param flags the flags, it can be the combineation of : 
+ * @param flags the flags, it can be the combineation of : 可能是以下情况的组合：
     PDO_SPR_PPS_POWER_LIMITED, PPS power limited 
  */
 #define PDO_PPS(max_ma, min_mv, max_mv, flags) (PDO_PPS_MAX_CURR(max_ma) | PDO_PPS_MIN_VOLT(min_mv) | PDO_PPS_MAX_VOLT(max_mv) | flags | PDO_TYPE(PDO_TYPE_PPS))

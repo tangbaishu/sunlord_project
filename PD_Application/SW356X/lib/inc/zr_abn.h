@@ -23,6 +23,18 @@ extern "C" {
  *
 @code
 
+/**
+ * @brief 对 zr_abn.h 的理解
+ * 1、 可获取或配置 threshold : SCP(Short Circuit Protection)、 UVP(Under Voltage Protection)、 
+ * UVLO(Under Voltage Lock Out) 、 OVP(Overvoltage Protection) 、 OTP(Over Thermal Protection)
+ * debounce time : OVP 、 Slow OVP 、 Fast OVP 、UVLO
+ * 2、 详见结构体 abn_config_t
+ * 3、 函数接口 void Abn_Get_Config(abn_config_t* config);   void Abn_Set_Config(const abn_config_t* config);
+ * 4、 注：在本文中 OTP 对应的枚举类型为: ovp_shutdown_threshold_e、 over temperature alarm 对应的枚举类型为: ovp_alarm_threshold_e
+ * @author TLB 20241204
+ */
+
+/*
 int main(void)
 {
     /// system init shall be called firstly
@@ -215,8 +227,8 @@ typedef union
         vin_uvlo_debounce_time_e vinUvloDbcTime: 1;             // vin uvlp debounce time
         uint32_t reserved0: 1;                                  // reserved
         dpdm_weak_short_threshold_e dpdmShortTh: 3;             // dpdm weak short threshold
-        ovp_shutdown_threshold_e ovpShutdownTh: 2;              // ovp shutdown threshold
-        ovp_alarm_threshold_e ovpAlarmTh: 2;                    // ovp alarm threshold
+        ovp_shutdown_threshold_e ovpShutdownTh: 2;              // over temperature shutdown threshold  ovp shutdown threshold  
+        ovp_alarm_threshold_e ovpAlarmTh: 2;                    // over temperature alarm threshold     ovp alarm threshold
         uint32_t reserver1: 6;                                  // reserved
     } bitFields;
 } abn_config_t;

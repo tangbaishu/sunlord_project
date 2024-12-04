@@ -3,6 +3,8 @@
 
 #include "gd32e50x.h"
 
+#define LED_NUMBER		4
+
 #define LED1_GPIO_CLOCK	RCU_GPIOA
 #define LED1_GPIO_PORT	GPIOA
 #define LED1_GPIO_PIN	GPIO_PIN_7

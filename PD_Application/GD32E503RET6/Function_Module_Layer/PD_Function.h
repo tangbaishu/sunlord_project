@@ -1,7 +1,7 @@
 #ifndef _PD_FUNCTION_H_
 #define _PD_FUNCTION_H_
 
-#include "PD_Protocol/sw3516p_driver.h"
+#include "PD_Protocol/sw6233_driver.h"
 
 typedef enum
 {
@@ -21,7 +21,7 @@ typedef struct
 
 typedef struct
 {
-	SW3516P_Driver_t		*PD_Protocol_IC;	// PD协议IC驱动
+	SW6233_Driver_t			*PD_Protocol_IC;	// PD协议IC驱动
 	PD_Input_Port_e 		Board_Input_Port;	// 板端插入端口信息
 	PD_Output_Power_t		PD_Output_Power;	// PD输出功率
 }PD_Function_t;									// PD功能信息

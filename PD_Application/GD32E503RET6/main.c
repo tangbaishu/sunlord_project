@@ -37,7 +37,7 @@ OF SUCH DAMAGE.
 #include "systick.h"
 #include <stdio.h>
 #include "OLED/oled_check.h"
-#include "PD_Protocol/sw3516p_driver.h"
+#include "PD_Protocol/sw6233_driver.h"
 #include "LED_Function.h"
 
 #define ARRAYNUM(arr_nanme) (uint32_t)(sizeof(arr_nanme) / sizeof(*(arr_nanme)))
@@ -92,7 +92,7 @@ int main(void)
 
     while(1)
     {
-        SW3516P_Init();  
+        SW6233_Init();  
     }
 }
 

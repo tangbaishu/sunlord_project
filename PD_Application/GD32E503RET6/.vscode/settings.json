@@ -62,7 +62,9 @@
 	"oled_check.h": "c",
 	"iic_api.h": "c",
 	"limits": "cpp",
-	"memory": "cpp"
+	"memory": "cpp",
+	"led_function.h": "c",
+	"pd_function.h": "c"
 },
 "commentTranslate.hover.enabled": true,
 

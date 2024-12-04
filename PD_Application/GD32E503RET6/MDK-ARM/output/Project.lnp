@@ -40,7 +40,7 @@
 ".\output\software_iic_driver.o"
 ".\output\led_driver.o"
 ".\output\iic_api.o"
-".\output\sw3516p_driver.o"
+".\output\sw6233_driver.o"
 --library_type=microlib --strict --scatter ".\output\Project.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -94,6 +94,7 @@ void IIC_Wait_Ack(void)
 void IIC_Send_Ack(void)
 {
 	IIC_SDA_PIN_LOW();
+	IIC_DELAY_10US(1);
 	IIC_SCL_PIN_HIGH();
 	IIC_DELAY_10US(1);
 	IIC_SCL_PIN_LOW();
@@ -213,7 +214,7 @@ unsigned char IIC_Driver_Read_Single_Data(unsigned char device_id, unsigned char
 	Write_IIC_Byte(device_id << 1 | 0x01);	// 设备ID bit0: 0写 1读
 	IIC_Wait_Ack();
 	Read_IIC_Byte(pdata);				// 寄存器写入数据
-	IIC_Send_Ack();
+	IIC_Send_NAck();
 	IIC_Stop();
 	printf("R Adr %#x : Value %#x \r\n", reg_adr, *pdata);
 	return 0;
@@ -224,7 +225,7 @@ unsigned char IIC_Driver_Read_Single_Data(unsigned char device_id, unsigned char
  * IIC多数据读取
  * 返回值 1:PASS、0:ERROR
  */
-unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *data, unsigned char data_len)
+unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char reg_adr, unsigned char *pdata, unsigned char data_len)
 {
 	unsigned char i=0;
 	IIC_Start();
@@ -237,7 +238,7 @@ unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char 
 	IIC_Wait_Ack();
 	for(; i < data_len; i++)
 	{
-		Read_IIC_Byte(data++);				// 寄存器写入数据
+		Read_IIC_Byte(pdata++);				// 寄存器写入数据
 		if(i== data_len -1)
 		{
 			IIC_Send_NAck();
@@ -248,6 +249,12 @@ unsigned char IIC_Driver_Read_Multi_Data(unsigned char device_id, unsigned char 
 		}
 	}
 	IIC_Stop();
+	pdata -= data_len;
+	for(i=0; i < data_len; i++)
+	{
+		printf("R Adr %#x : Value %#x \r\n", reg_adr++, *pdata);
+		pdata++;
+	}
 	return 0;
 }
 

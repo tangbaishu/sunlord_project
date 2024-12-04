@@ -10,31 +10,6 @@
 I2C_M_Driver_Info_t I2C_M_Driver;
 i2cm_config_t 		i2cm_config;
 
-void I2C_Master_Check(void)
-{
-	I2C_Master_Driver_Init(0x3c);
-	printf("I2C_Master_Init\r\n");
-	I2C_M_Driver.Transfer_Data.P_Wdata[0] = 0x01;
-
-	I2C_M_Driver.Transfer_Data.Reg_Addr = 0x01;
-	I2C_M_Driver.Transfer_Data.P_Wdata[0]++;
-	I2C_M_Driver.Transfer_Data.P_Wdata[1] = 0xFF;
-	I2C_M_Driver.Transfer_Data.P_Wdata[2] = 0x00;
-	I2C_M_Driver.Transfer_Data.P_Wdata[3] = 0x55;
-	I2C_M_Driver.Transfer_Data.P_Wdata[4] = 0xAA;
-	I2C_M_Driver.Transfer_Data.Wdata_Len = 5;
-	
-	printf("i2c_master return:%#x\r\n", (uint8_t)I2C_Master_Write_NByte(&I2C_M_Driver.Transfer_Data));
-	Systick_Delay_Ms(100);
-
-	I2C_M_Driver.Transfer_Data.Reg_Addr = 0x01;
-	I2C_M_Driver.Transfer_Data.Wdata_Len = 0;
-	I2C_M_Driver.Transfer_Data.Rdata_Len = 1;
-	I2C_Master_Read_NByte(&I2C_M_Driver.Transfer_Data);
-	printf("i2c_read %#x\r\n", I2C_M_Driver.Transfer_Data.P_Rdata[0]);
-	
-}
-
 void I2C_Master_Driver_Init(uint8_t device_id)
 {
 	gpio_config_t gpio_config;
@@ -68,7 +43,7 @@ void I2C_Master_Driver_Init(uint8_t device_id)
 	struct Transfer_Info_t
 	{
 		uint8_t Reg_Addr;
-		uint8_t *P_Wdata[MAX_WDATA_LEN];
+		uint8_t *P_Wdata[IIC_MAX_WDATA_LEN];
 		uint8_t Wdata_Len;
 	}wirte_data;
  *
@@ -76,51 +51,12 @@ void I2C_Master_Driver_Init(uint8_t device_id)
  */
 I2C_State_e I2C_Master_Write_NByte(Transfer_Info_t *wirte_data)
 {
-	uint8_t wait=0,data_sub=0;
-	while(1)
-	{
-		if(I2c_Master_Busy_Flag() == SET) 		// 若忙碌
-		{
-			Systick_Delay_Ms(1);
-			wait++;
-			if(wait >= BUSY_TIMEOUT_TIME)
-			{
-				return BUSY_TIMEOUT;
-			}
-		}
-		else
-		{
-			wait = 0;
-			break;
-		}
-	}
-
-	I2C_M_Driver.Runing_State = BUSY;
 	I2c_Master_Write_Data((uint8_t *)wirte_data, wirte_data->Wdata_Len + 1);
 	return I2C_M_Driver.Runing_State;
 }
 
 I2C_State_e I2C_Master_Read_NByte(Transfer_Info_t *read_data)
 {
-	uint8_t wait=0,data_sub=0;
-	while(1)
-	{
-		if(I2c_Master_Busy_Flag() == SET) 		// 若忙碌
-		{
-			Systick_Delay_Ms(1);
-			wait++;
-			if(wait >= BUSY_TIMEOUT_TIME)
-			{
-				return BUSY_TIMEOUT;
-			}
-		}
-		else
-		{
-			wait = 0;
-			break;
-		}
-	}
-
 	I2C_M_Driver.Runing_State = BUSY;
 	I2c_Master_Read_Data((uint8*)&read_data->Reg_Addr, read_data->Wdata_Len + 1, read_data->P_Rdata, read_data->Rdata_Len);
 	return I2C_M_Driver.Runing_State;

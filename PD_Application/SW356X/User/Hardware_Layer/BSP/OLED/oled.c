@@ -20,9 +20,9 @@
 // All rights reserved
 //////////////////////////////////////////////////////////////////////////////////�
 
-#include "OLED/oled.h"
+#include "BSP/OLED/oled.h"
 #include "stdlib.h"
-#include "OLED/oledfont.h"
+#include "BSP/OLED/oledfont.h"
 #include "i2c_master_driver.h"
 #include "zr_systick.h"
 #include "stdio.h"
@@ -36,6 +36,8 @@
 //[5]0 1 2 3 ... 127
 //[6]0 1 2 3 ... 127
 //[7]0 1 2 3 ... 127
+
+extern I2C_State_e I2C_Master_Write_NByte(Transfer_Info_t *wirte_data);
 
 void OLED_WR_Byte(unsigned dat, unsigned cmd)
 {

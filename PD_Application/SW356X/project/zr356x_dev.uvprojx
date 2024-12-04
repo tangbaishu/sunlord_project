@@ -826,6 +826,11 @@
           <GroupName>User/Hardware_Layer</GroupName>
           <Files>
             <File>
+              <FileName>i2c_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Layer\i2c_api.c</FilePath>
+            </File>
+            <File>
               <FileName>i2c_master_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware_Layer\i2c_master_driver.c</FilePath>
@@ -848,17 +853,22 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>User/Hardware_Layer/OLED</GroupName>
+          <GroupName>User/Hardware_Layer/BSP</GroupName>
           <Files>
             <File>
               <FileName>oled.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Layer\OLED\oled.c</FilePath>
+              <FilePath>..\User\Hardware_Layer\BSP\OLED\oled.c</FilePath>
             </File>
             <File>
               <FileName>oled_check.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Layer\OLED\oled_check.c</FilePath>
+              <FilePath>..\User\Hardware_Layer\BSP\OLED\oled_check.c</FilePath>
+            </File>
+            <File>
+              <FileName>sw6233_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Layer\BSP\PD_Protocol_IC\sw6233_driver.c</FilePath>
             </File>
           </Files>
         </Group>

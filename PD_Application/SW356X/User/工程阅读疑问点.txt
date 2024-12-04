@@ -1,0 +1,12 @@
+/*
+1. 该配置变量的含义及作用？
+	具体使用代码: config->isAbnLpsEnabled = false;
+	相关代码:
+	config_data_t* config = Config_Get();
+	typedef struct
+	{
+		...
+		bool isAbnLpsEnabled: 1;				//!< whether to enable lps abn   
+		...
+	}config_data_t;
+*/

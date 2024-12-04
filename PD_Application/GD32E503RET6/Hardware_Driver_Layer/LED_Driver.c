@@ -25,6 +25,10 @@ void LED_Driver_Init(void)
 	gpio_init(LED2_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_MAX, LED2_GPIO_PIN);
 	gpio_init(LED3_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_MAX, LED3_GPIO_PIN);
 	gpio_init(LED4_GPIO_PORT, GPIO_MODE_OUT_PP, GPIO_OSPEED_MAX, LED4_GPIO_PIN);
+	for(uint8 num=LED1;num < LED_NUMBER+LED1; num++)
+	{
+		LED_Driver_OFF(num);
+	}
 }
 
 /**

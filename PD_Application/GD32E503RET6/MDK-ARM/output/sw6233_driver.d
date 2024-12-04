@@ -1,4 +1,8 @@
-./output/main.o: ..\main.c \
+./output/sw6233_driver.o: \
+  ..\Hardware_Driver_Layer\BSP\PD_Protocol\sw6233_driver.c \
+  ..\Hardware_Driver_Layer\BSP\PD_Protocol\SW6233_driver.h \
+  ..\Hardware_Driver_Layer\IIC_Driver\iic_api.h \
+  ..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h \
   ..\GD32E50x_Firmware_Library\CMSIS\GD\GD32E50x\Include\gd32e50x.h \
   ..\GD32E50x_Firmware_Library\CMSIS\core_cm33.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
@@ -33,10 +37,7 @@
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_wwdgt.h \
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sqpi.h \
   ..\GD32E50x_Firmware_Library\GD32E50x_standard_peripheral\Include\gd32e50x_sdio.h \
-  ..\Utilities\gd32e503r_start.h ..\.\systick.h \
+  ..\.\systick.h ..\Hardware_Driver_Layer\OLED\oled.h \
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h \
-  ..\Hardware_Driver_Layer\OLED\oled_check.h \
-  ..\Hardware_Driver_Layer\BSP\PD_Protocol\sw6233_driver.h \
-  ..\Hardware_Driver_Layer\IIC_Driver\iic_api.h \
-  ..\Hardware_Driver_Layer\IIC_Driver\software_iic_driver.h \
-  ..\.\systick.h ..\Function_Module_Layer\LED_Function.h
+  ..\Function_Module_Layer\LED_Function.h

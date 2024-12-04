@@ -1,6 +1,6 @@
-#include "OLED/oled_check.h"
-#include "OLED/oled.h"
-// #include "OLED/bmp.h"
+#include "BSP/OLED/oled_check.h"
+#include "BSP/OLED/oled.h"
+// #include "BSP/OLED/bmp.h"
 #include "zr_systick.h"
 
 int oled_main(void)

@@ -8,26 +8,15 @@ void LED_Check(void)
 {
 	LED_Function_List.LED_Function_Init();
 	
-	LED_Function_List.LED_Function_OFF(1);
-	LED_Function_List.LED_Function_OFF(2);
-	LED_Function_List.LED_Function_OFF(3);
-	LED_Function_List.LED_Function_OFF(4);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_ON(1);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_ON(2);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_ON(3);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_ON(4);
+	for(uint8 num=LED1;num < LED_NUMBER+LED1; num++)
+	{
+		LED_Function_List.LED_Function_ON(num);
+	}
 	delay_1ms(1000);
 
-	LED_Function_List.LED_Function_Turn(1);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_Turn(2);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_Turn(3);
-	delay_1ms(1000);
-	LED_Function_List.LED_Function_Turn(4);
+	for(uint8 num=LED1;num < LED_NUMBER+LED1; num++)
+	{
+		LED_Function_List.LED_Function_Turn(num);
+	}
 	delay_1ms(1000);
 }

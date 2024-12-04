@@ -20,10 +20,10 @@ typedef struct
 {
     const volatile uint8_t *ufcsSrcCap;                         //!< ufcs src cap data
     const volatile uint32_t* pdSrcCap;                          //!< pd src cap data
-    uint32_t xid : 32;                                          //!< XID
-    uint16_t vid : 16;                                          //!< Vendor ID
-    uint16_t pid : 16;                                          //!< PID
-    uint16_t bcdDevice : 16;                                    //!< bcd device;
+    uint32_t xid : 32;                                          //!< XID            详见: XID（XHCI ID）
+    uint16_t vid : 16;                                          //!< Vendor ID      详见：VID（Vendor ID）
+    uint16_t pid : 16;                                          //!< PID            详见：PID（Product ID）
+    uint16_t bcdDevice : 16;                                    //!< bcd device;    详见：bcdDevice
                         
     uint8_t pdMaxPower : 8;                                     //!< pd max power, unit: W
     uint8_t tfcpMaxPower : 8;                                   //!< tfcp max power, unit : W
@@ -69,14 +69,14 @@ typedef struct
     bool isVconnSwapEnabled : 1;                                //!< whether to support vconn swap
     bool isResponseDiscoveryId : 1;                             //!< whether to response discover id
 
-    bool isTfcpEnabled : 1;                                     //!< whether to enable tfcp
-    bool isVooc1p0Enabled : 1;                                  //!< whether to enable vooc 1.0
+    bool isTfcpEnabled : 1;                                     //!< whether to enable tfcp         华为 TFCP作为华为早期的快充技术,后续将TFCP升级为SCP（Super Charge Protocol）
+    bool isVooc1p0Enabled : 1;                                  //!< whether to enable vooc 1.0     
     bool isVooc4p0Enabled : 1;                                  //!< whether to enable vooc 4.0
     bool isSuperVooc2p0Enabled : 1;                             //!< whether to enable vooc supper 2.0
-    bool isPeEnabled : 1;                                       //!< whether to enable pe
-    bool isQc2p0Enabled : 1;                                    //!< whether to enable qc2.0
-    bool isQc3p0Enabled : 1;                                    //!< whether to enable qc3.0
-    bool isQc3plusEnabled : 1;                                  //!< whether to enable qc3+
+    bool isPeEnabled : 1;                                       //!< whether to enable pe       联发科 Pump Express协议 特点：脉冲电流指令、初始电压可调、不增加电压提高电流
+    bool isQc2p0Enabled : 1;                                    //!< whether to enable qc2.0    高通 Quick Charge 2.0协议 特点：D+/D-通讯、支持5V、9V、12V三组固定电压输出、最大电流3A
+    bool isQc3p0Enabled : 1;                                    //!< whether to enable qc3.0    高通 Quick Charge 3.0协议 特点：D+/D-通讯、支持3.6V~20V的电压输出，步进0.2V、最大电流3A、INOV算法
+    bool isQc3plusEnabled : 1;                                  //!< whether to enable qc3+     高通 Quick Charge 3.0+协议 特点：D+/D-通讯、支持3.6V~20V的电压输出，步进0.02V、最大电流3A、INOV+算法
     bool isAfcEnabled : 1;                                      //!< whether to enable afc
     bool isFcpEnabled : 1;                                      //!< whether to enable FCP
     bool isHvScpEnabled : 1;                                    //!< whether to enable high voltage scp

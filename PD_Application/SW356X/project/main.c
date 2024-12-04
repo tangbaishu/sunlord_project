@@ -5,10 +5,10 @@
  * @author SD1 & SW team
  ****************************************************************************/
 #include "base_time_driver.h"
-#include "OLED/oled_check.h"
+#include "BSP/OLED/oled_check.h"
 #include "uart_driver.h"
 #include "LED_Driver/led_driver.h"
-#include "i2c_master_driver.h"
+#include "BSP/PD_Protocol_IC/sw6233_driver.h"
 
 #include "api.h"
 #include "config.h"
@@ -28,7 +28,9 @@
 #include "i2c_slave.h"
 
 #include <stdio.h>
-#define USER_DRIVER_CHECK
+
+// #define EXTEND_SW_PD_IC      // 外挂智融 PD协议 芯片
+// #define USER_DRIVER_CHECK    // 驱动测试验证
 #define DEBUG_PRINTF_OPEN
 // #define POWER_CALLBACK
 // #define TRACE_PROTOCOL
@@ -274,7 +276,7 @@ int main(void)
     config->isCableCompensaved = true;  
     config->isAbnLpsEnabled = false;
 
-    // dpdm
+    // dpdm Apple、Samsung、QC、PE、
     config->dpdmFixPower = 60;
     config->isAppleEnabled = true;
     config->isSamsungEnabled = true;
@@ -372,6 +374,10 @@ int main(void)
 #if defined(DEBUG_PRINTF_OPEN)
     Serail_Init(460800);
     printf("\nzr2067_app: %s %s\n", __DATE__, __TIME__);
+#endif
+
+#if defined(EXTEND_SW_PD_IC)
+    SW6233_Init();
 #endif
 
 #if defined(USER_DRIVER_CHECK)
