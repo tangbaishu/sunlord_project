@@ -340,7 +340,7 @@
               <MiscControls>-mfloat-abi=soft -Wno-extra-semi-stmt -Wno-declaration-after-statement -Wno-padded  -Wno-covered-switch-default -Wno-cast-align -Wno-missing-variable-declarations -Wno-switch-enum -Wno-date-time</MiscControls>
               <Define>CUSTOMIZE_CFG</Define>
               <Undefine></Undefine>
-              <IncludePath>..\app\inc;..\common\inc;..\lib\inc;..\policy\inc;..\common\inc;..\core\inc;..\system\inc;..\lib\inc;..\pd\inc;..\lenevo_sink\inc;..\User\Hardware_Layer;..\User\Function_Module_Layer;..\User\Business_Layer;..\User\Application_Layer</IncludePath>
+              <IncludePath>..\app\inc;..\common\inc;..\lib\inc;..\policy\inc;..\common\inc;..\core\inc;..\project;..\system\inc;..\lib\inc;..\pd\inc;..\lenevo_sink\inc;..\User\Hardware_Layer;..\User\Function_Module_Layer;..\User\Business_Layer;..\User\Application_Layer</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -815,12 +815,43 @@
         </Group>
         <Group>
           <GroupName>User/Application_Layer</GroupName>
+          <Files>
+            <File>
+              <FileName>power_coroutine.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Application_Layer\power_coroutine.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User/Business_Layer</GroupName>
+          <Files>
+            <File>
+              <FileName>power_business.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Business_Layer\power_business.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User/Function_Module_Layer</GroupName>
+          <Files>
+            <File>
+              <FileName>port_module.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Function_Module_Layer\port_module.c</FilePath>
+            </File>
+            <File>
+              <FileName>power_function_api.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Function_Module_Layer\power_function_api.c</FilePath>
+            </File>
+            <File>
+              <FileName>log_function.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Function_Module_Layer\log_function.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>User/Hardware_Layer</GroupName>

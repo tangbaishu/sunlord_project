@@ -22,6 +22,7 @@ extern "C" {
  * @par Example below shows Abn config set and get
  *
 @code
+*/
 
 /**
  * @brief 对 zr_abn.h 的理解
@@ -32,7 +33,7 @@ extern "C" {
  * 3、 函数接口 void Abn_Get_Config(abn_config_t* config);   void Abn_Set_Config(const abn_config_t* config);
  * 4、 注：在本文中 OTP 对应的枚举类型为: ovp_shutdown_threshold_e、 over temperature alarm 对应的枚举类型为: ovp_alarm_threshold_e
  * @author TLB 20241204
- */
+*/
 
 /*
 int main(void)

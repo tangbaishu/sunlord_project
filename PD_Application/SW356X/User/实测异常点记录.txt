@@ -1,0 +1,56 @@
+异常点一： 异常恢复回调函数 仅支持 for abnormalReleaseHook 部分的事件恢复后回调
+即异常触发回调和异常恢复回调事件不一致，详细事件差异如下：
+相关代码：
+/**
+ * @brief  abnormal hook typedef
+ * @param pending, abnormal event irq pending
+ * @note  for abnormalOccurredHook, 
+ *        bit0  : LPS
+ *        bit1  : DM OVP 
+ *        bit2  : DP OVP
+ *        bit3  : CC2 OVP
+ *        bit4  : CC1 OVP
+ *        bit5  : VCONN2 OCP
+ *        bit6  : VCONN1 OCP
+ *        bit7  : DIE OTP
+ *        bit8  : VOUT SCP
+ *        bit9  : VOUT Slow OVP
+ *        bit10 : VOUT Fast OVP 
+ *        bit11 : VIN UVLO
+ *        bit12 : VIN OVP
+ *        bit13 : VOUT UVP
+ *        bit14 : DIE Warn
+ *        bit15 : DM2 Weak Short
+ *        bit16 : DP2 Weak Short
+ *        bit17 : DM1 Weak Short,
+ *        bit18 : DP1 Weak Short
+ *        bit19~bit31  reserved
+ * 
+ *        for abnormalReleaseHook
+ *        bit0  : DM OVP Release
+ *        bit1  : DP OVP Release
+ *        bit2  : CC2 OVP Release
+ *        bit3  : CC1 OVP Release
+ *        bit4  : DIE OTP Release
+ *        bit5  : VOUT SLOW OVP Release
+ *        bit6  : VOUT FAST OVP  Release
+ *        bit7  ：VIN UVLO Release
+ *        bit8  ：VIN OVP Release
+ *        bit9  ：DIE WARN Release
+ *        bit10 ：DM2 Weak Short Release
+ *        bit11 ：DP2 Weak Short Release
+ *        bit12 ：DM1 Weak Short Release
+ *        bit13 ：DP1 Weak Short Release
+ *        bit14~bit31  reserved
+ */
+typedef void (*Abnormal_Hook)(u32 pending);
+/**
+ * @brief  user init abnormal hook func ,only valid func can be called
+ * @param abnormalOccurredHook,Pointer functions for abnormal occurred,it will be call once when abnormal occurred
+ * @param abnormalReleaseHook,Pointer functions for abnormal release,it will be call once when abnormal release 
+ *        
+ */
+void Abnormal_Init_Hook_Func(Abnormal_Hook abnormalOccurredHook, Abnormal_Hook abnormalReleaseHook);
+
+异常点二：输出过流保护
+5V输出时，输出电流 临近过流点时，芯片会反复关断&开启输出。但不触发异常事件回调，需电流进一步增大逼近过流值后，触发异常事件回调。

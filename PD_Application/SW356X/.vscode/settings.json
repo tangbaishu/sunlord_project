@@ -87,7 +87,14 @@
 	"base_time_driver.h": "c",
 	"sink_policy.h": "c",
 	"user_pd_policy.h": "c",
-	"i2c_slave.h": "c"
+	"i2c_slave.h": "c",
+	"functional": "c",
+	"config_types.h": "c",
+	"stdint.h": "c",
+	"zr_abn.h": "c",
+	"zr_adc.h": "c",
+	"power_coroutine.h": "c",
+	"power_function_api.h": "c"
 },
 "commentTranslate.hover.enabled": true,
 

@@ -98,7 +98,7 @@ uint16_t Adc_Vout_Raw_Get(void);
 
 /**
  * @brief  Get output current (move average)
- * @param portNum port number 0 or 1
+ * @param portNum port number 0 or 1    0:port1 、 1:port2
  * @return output move average current in mA unit
  */
 uint16_t Adc_Iout_Get(u8 portNum);

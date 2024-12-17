@@ -502,7 +502,7 @@ void Ufcs_Set_Power_Change(void);
  * @brief  abnormal hook typedef
  * @param pending, abnormal event irq pending
  * @note  for abnormalOccurredHook, 
- *        bit0  : LPS
+ *        bit0  : LPS   
  *        bit1  : DM OVP 
  *        bit2  : DP OVP
  *        bit3  : CC2 OVP
@@ -545,7 +545,8 @@ typedef void (*Abnormal_Hook)(u32 pending);
 /**
  * @brief  user init abnormal hook func ,only valid func can be called
  * @param abnormalOccurredHook,Pointer functions for abnormal occurred,it will be call once when abnormal occurred
- * @param abnormalReleaseHook,Pointer functions for abnormal release,it will be call once when abnormal release
+ * @param abnormalReleaseHook,Pointer functions for abnormal release,it will be call once when abnormal release 
+ *         经实测异常恢复回调函数无效
  */
 void Abnormal_Init_Hook_Func(Abnormal_Hook abnormalOccurredHook, Abnormal_Hook abnormalReleaseHook);
 ////////////////////////////Abnormal API END////////////////////////////////
@@ -724,7 +725,7 @@ void Pd_Set_Pd_Rev(bool isPd2);
 void Pd_Rebroadcast_Src_Cap(void);
 
 /**
- * @brief  User send pd soft reset
+ * @brief  User send pd soft reset 调用该函数会导致诱骗器熄屏，重新获取PD协议
  */
 void Pd_Send_Soft_Reset(void);
 

@@ -5,6 +5,9 @@
 #include "zr_rcc.h"
 #include "zr_nvic.h"
 
+uint32_t sys_start = 0, sys_time = 0,time_finish = 0, timer_stop = 0;
+
+
 void Base_Time_Driver_Check(void)
 {
 	#include "zr_systick.h"
@@ -22,6 +25,21 @@ void Base_Time_Driver_Check(void)
 	}
 }
 
+void Start_Noload_Timer(uint16_t reload_value)
+{
+	// start a btm every NOLOAD_CHECKING_INTERVAL ms
+	Btm4_Set_Reload_Value(reload_value*1000/8 - 1);
+	Nvic_Irq_Enable(BTM4_IRQn,PRIORITY_2);
+	Btm4_Int_Enable();
+	Btm4_Enable();   
+}
+
+void Stop_Noload_Timer(void)
+{
+	Nvic_Irq_Disable(BTM4_IRQn);
+	Btm4_Int_Disable();
+	Btm4_Disable();   
+}
 
 /**
  * @brief 计算公式：定时时间T = reload_value * 8.2us
@@ -42,10 +60,24 @@ void Base_Time_Driver_Init(unsigned int reload_value)
 	
 }
 
+void Base_Time_Driver_DeInit(void)
+{
+	Nvic_Irq_Disable(BTM4_IRQn);
+	Btm4_Clear_Int_Pending();
+	Btm4_Int_Disable();
+	Btm4_Disable();  
+}
+
 void BTM4_Handler(void)
 {
 	if(Btm4_Get_Int_Pending() == SET)
 	{
+		sys_time++;
+		if(sys_time >= 120000)
+		{
+			sys_time = 0;
+			time_finish = 1;
+		}
 		Btm4_Clear_Int_Pending();
 		LED_Driver_Turn(2);
 	}
