@@ -5,13 +5,17 @@
 #endif // DEBUG
 
 #ifdef LOG_ABNORMAL
-	const char Abnormal_Occurred_Event_Name[19][15] = {
+	// typedef struct
+	// {
+	// 	const char *p;
+	// }Abnormal_Event_Name_t;
+	const static char Abnormal_Occurred_Event_Name[19][15] = {
 		"LPS", "DM OVP", "DP OVP", "CC2 OVP", "CC1 OVP", "VCONN2 OCP",
 		"VCONN1 OCP", "DIE OTP", "VOUT SCP", "VOUT Slow OVP", "VOUT Fast OVP", "VIN UVLO",
 		"VIN OVP", "VOUT UVP", "DIE Warn", "DM2 Weak Short", "DP2 Weak Short", "DM1 Weak Short", "DP1 Weak Short"
 		};
 
-	const char Abnormal_Release_Event_Name[14][23] = {
+	const static char Abnormal_Release_Event_Name[14][23] = {
 		"DM OVP Release", "DP OVP Release", "CC2 OVP Release", "CC1 OVP Release", "DIE OTP Release", 
 		"VOUT SLOW OVP Release", "VOUT FAST OVP  Release", "VIN UVLO Release", "VIN OVP Release", "DIE WARN Release", 
 		"DM2 Weak Short Release", "DP2 Weak Short Release", "DM1 Weak Short Release", "DP1 Weak Short Release"
@@ -29,7 +33,7 @@ void LOG_Abnormal_Occurred_Event(u32 pending_flag)
 		{
 			if(pending_flag & (0x01 << num))
 			{
-				printf("%s", Abnormal_Occurred_Event_Name[num]);
+				printf("%s", (char *)&Abnormal_Occurred_Event_Name[num]);
 				printf("\r\n");
 			}
 		}
@@ -47,7 +51,7 @@ void LOG_Abnormal_Release_Event(u32 pending_flag)
 		{
 			if(pending_flag & (0x01 << num))
 			{
-				printf("%s", Abnormal_Release_Event_Name[num]);
+				printf("%s", (char *)&Abnormal_Release_Event_Name[num]);
 				printf("\r\n");
 			}
 		}

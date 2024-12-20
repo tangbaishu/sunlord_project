@@ -238,7 +238,7 @@ int main(void)
     {
         // the following sequence shall NOT change
         Device_Run();
-        #if CONFIG_PORT_MODE != SET_DUO_CC_MODE
+        #if ((CONFIG_PORT_MODE == SET_SINGLE_A_MODE) || (CONFIG_PORT_MODE == SET_DUO_AA_MODE) || (CONFIG_PORT_MODE == SET_DUO_CA_MODE))
             Port_Scan_Func_Logic();
         #endif
         Power_Supply_Charge_Routine();

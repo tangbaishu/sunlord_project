@@ -37,6 +37,8 @@ typedef struct
 extern Power_Output_Info_t Power_Output_Info[POWER_OUTPUT_PORT_NUM];
 void Power_Output_Gather(Power_Output_Port_e port_num, bool updata_i_v);
 
+void PD_Request_Info_func(u8 objIndex, u16 volInMv, u16 currInMa);
+bool PD_Policy_Hook(void);
 /**
  * @brief 异常发生显示
  * 

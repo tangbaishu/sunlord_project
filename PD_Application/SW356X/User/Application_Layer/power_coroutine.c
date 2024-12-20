@@ -25,8 +25,11 @@ void Power_Supply_Charge_Routine(void)
 		initialize_flag = 1;
 		Abn_Get_Config(&abn_config);
 		printf(LOG"abn_config = %#x\r\n", abn_config.value);
+		abn_config.value |= 0x01<<7;
+		Abn_Set_Config(&abn_config);
 		Power_Abnormal_Init_Hook(&Abnormal_Display_Hook_Func);
 	}
+	/*
 	if(Port_Module_Data.Port2_Insert_State.Current_State == PORT_ATTACH)
 	{
 		if(sys_start == 0)
@@ -84,4 +87,5 @@ void Power_Supply_Charge_Routine(void)
 			Stop_Noload_Timer();
 		}
 	}
+	*/
 }

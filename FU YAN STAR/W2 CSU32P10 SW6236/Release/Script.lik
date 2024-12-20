@@ -1,0 +1,20 @@
+version:Mon Aug 08 15:27:53 2016
+
+bodyname:"CSU32P10"
+bodyseries:"CSU32PXX"
+bodyconfig:"D:\Chipsea\CSU-IDE\chipsea\project\body\CSU32PXX\CSU32P10\ChipInfo.conf"
+options:Fill 0xffff
+codeoption:"0x0800:0x3801;"
+codeoffset:"0"
+codesize:"0x7ff"
+limitcodesize:"0x7FF"
+appendcodesize:"0x000"
+bankcount:"1"
+input:"D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\adc.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\data.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\delay.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\initialization.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\lowpower.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\main.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\pwm.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\SysRegDefine.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\check_list.obj","D:\Work_Area\项目\客户项目\赋研星辰\芯片资料\芯海(CHIPSEA)\CSU32P10_C_example\Release\cstartup.obj"
+library:"D:\Chipsea\CSU-IDE\chipsea\tools\Compiler\C\libcscc.lib"
+temppath:"D:/Work_Area/项目/客户项目/赋研星辰/芯片资料/芯海(CHIPSEA)/CSU32P10_C_example/Release\"
+outputbin:"D:/Work_Area/项目/客户项目/赋研星辰/芯片资料/芯海(CHIPSEA)/CSU32P10_C_example/Release\32P10_C_DEMO.hex"
+;example begin
+;locate: CSCC_SECTION_1 at 0x80
+;locate: CSCC_SECTION_2 after CSCC_INIT_1
+;example end

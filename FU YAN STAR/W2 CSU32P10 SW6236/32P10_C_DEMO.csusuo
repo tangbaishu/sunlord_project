@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<UserOptions>
+	<GPlusSetting>
+	</GPlusSetting>
+	<UI_dockbar_disassembler>
+		AddressList=""
+	</UI_dockbar_disassembler>
+	<UI_dockbar_memory1>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory1>
+	<UI_dockbar_memory2>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory2>
+	<UI_dockbar_memory3>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory3>
+	<UI_dockbar_memory4>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory4>
+	<UI_dockbar_memory5>
+		ViewAddress=""
+		AddressList=""
+	</UI_dockbar_memory5>
+	<UI_dockbar_registers>
+		ActiveRegGroup="SFR"
+	</UI_dockbar_registers>
+	<OpenState>
+		<OpenFiles>
+			Path=".\\CSU32P10.h"
+			Path=".\\define_data.h"
+			Path=".\\check_list.asm"
+			Path=".\\data.c"
+			Path=".\\delay.c"
+			Path=".\\initialization.c"
+			Path=".\\pwm.c"
+			Path=".\\SysRegDefine.c"
+			Path=".\\adc.c"
+			Path=".\\lowpower.c"
+			Path=".\\define_function.h"
+			Path=".\\main.c"
+			State="0,0,0"
+		</OpenFiles>
+		<OpenFolders>
+			<{E82BD226-5BCE-4C7B-AC05-00ACCB32F2FD}>
+				Expanded="TRUE"
+				Name="Header Files"
+				Name="Source Files"
+				Name="System Files"
+				Name="Linker Files"
+			</{E82BD226-5BCE-4C7B-AC05-00ACCB32F2FD}>
+		</OpenFolders>
+	</OpenState>
+	<Breakpoints>
+	</Breakpoints>
+	<WatchVariables>
+		<dockbar_watch1>
+			<Variable>
+				Name="t10s_count"
+			</Variable>
+		</dockbar_watch1>
+	</WatchVariables>
+</UserOptions>

@@ -44,6 +44,7 @@ typedef enum
 /**
  * Typec cc term definition
  * refer to typec control register
+ * 配置 cc引脚的Rp电阻
  */
 typedef enum
 {

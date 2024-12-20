@@ -1,0 +1,10 @@
+文件夹名称命名规则：主控MCU/SOC
+
+文件夹名称：CSU32M10
+含义：芯海 CUS32M10 Base code
+
+文件夹名称：GD32E503RET6
+含义：GD GD32E503RET6 + IIC
+
+文件夹名称：GD32F450ZKT6
+含义：GD GD32F450ZKT6 + IIC

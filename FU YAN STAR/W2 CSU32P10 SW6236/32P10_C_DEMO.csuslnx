@@ -1,0 +1,27 @@
+# Generalplus IDE Solution File, Format Version 1.0.0
+# Warning: do not edit or delete this solution file!
+
+# ////////////////////////////////////////////////////
+# Begin Solution
+<Solution>
+	NAME : 32P10_C_DEMO
+	GUID : {66F14CE8-A5EB-4DB4-A30A-BD7EAD3AD45F}
+	STARTUP : {E82BD226-5BCE-4C7B-AC05-00ACCB32F2FD}
+	ACTIVECONFIGURATION : Release
+</Solution>
+# End Solution
+
+# ////////////////////////////////////////////////////
+# Begin Project
+<Projects>
+	COUNT : 1
+	<Project1>
+		NAME : 32P10_C_DEMO
+		GUID : {E82BD226-5BCE-4C7B-AC05-00ACCB32F2FD}
+		PATH : .\32P10_C_DEMO.csuprjx
+		Dependencies : 
+	</Project1>
+</Projects>
+
+# End Project
+# ////////////////////////////////////////////////////

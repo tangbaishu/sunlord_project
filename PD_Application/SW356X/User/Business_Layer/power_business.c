@@ -1,5 +1,6 @@
 #include "power_business.h"
 
+#include "power_function_api.h"
 #include "port_module.h"
 #include "zr_systick.h"
 
@@ -204,13 +205,14 @@ void Power_Business_Init(void)
 	Power_Business_Data.P_Init_Config->isIgnoreEprCable = false;
 	Power_Business_Data.P_Init_Config->vPpsShutDownInMv = 3100;
 
-    Port_Module_Data.Power_Supply_Select = Power_Supply_Switch;  // 将电源供应切换逻辑函数地址 赋值给 电源功率选择函数指针
-    Port_Module_Data.Power_Supply_Select(POWER_SUPPLY_MODE_A, FALSE);	// 配置 ufcs 和 PD 协议输出功率
+    Port_Module_Data.Power_Supply_Select = Power_Supply_Switch;             // 将电源供应切换逻辑函数地址 赋值给 电源功率选择函数指针
+    Port_Module_Data.Power_Supply_Select(POWER_SUPPLY_MODE_A, FALSE);	    // 配置 ufcs 和 PD 协议输出功率
 
     Config_Apply();
     
 	Low_Power_Register_Hook(LowPowerHook_OnBefore, LowPowerHook_OnAfter);
-	// Device_Register_Power_Adjust_Hook(Power_Adjust_Hook);
+    // Pd_Init_Hook_Func(PD_Request_Info_func, PD_Policy_Hook);                // 仅支持PD协议
+	Device_Register_Power_Adjust_Hook(Power_Adjust_Hook);                   // sink请求任意协议，均会回调该函数
 	//Abnormal_Init_Hook_Func(); //暂不修改，使用默认值
 
     Port_Scan_Func_Init();
@@ -311,6 +313,7 @@ static void LowPowerHook_OnAfter(void)
 /**
  * @brief 输出功率调整 (钩子函数)
  * 若需要调整，需在每次插入后重复修改调整值
+ * 当port1Curr / port2Curr值为2528时，表明该端口空闲无协议获取。
  * @param vol           输出电压    单位：10mV
  * @param port1Curr     端口1限流   单位：25mA
  * @param port2Curr     端口2限流   单位：25mA

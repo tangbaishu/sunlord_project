@@ -26,7 +26,7 @@
 #define SET_DUO_AA_MODE			2  	//!< A + A mode
 #define SET_DUO_CA_MODE			3  	//!< C + A mode
 #define SET_DUO_CC_MODE			4   //!< C + C mode
-#define CONFIG_PORT_MODE		SET_DUO_CC_MODE
+#define CONFIG_PORT_MODE		SET_SINGLE_C_MODE
 
 typedef enum
 {
@@ -56,7 +56,7 @@ extern	Port_Module_Data_t	Port_Module_Data;
 
 void Port_Scan_Func_Init(void);
 
-#if CONFIG_PORT_MODE != SET_DUO_CC_MODE
+#if ((CONFIG_PORT_MODE == SET_SINGLE_A_MODE) || (CONFIG_PORT_MODE == SET_DUO_AA_MODE) || (CONFIG_PORT_MODE == SET_DUO_CA_MODE))
 	void Port_Scan_Func_Logic(void);
 #endif
 

@@ -11,6 +11,23 @@ Abnormal_Dispose_Data_t	Abnormal_Dispose_Data;
 
 Abnormal_Display_Hook_t	Abnormal_Display_Hook_Func;
 
+/**
+ * @brief 获取Sink 请求的功率信息：PD功率段索引、请求的电压、请求的电流
+ * 调用函数接口: void Pd_Init_Hook_Func(Request_Info_Hook requestInfoHook, Policy_Hook policyHook);
+ * 
+ * 
+ */
+void PD_Request_Info_func(u8 objIndex, u16 volInMv, u16 currInMa)
+{
+	printf("objIndex = %d,volInMv = %d,currInMa = %d\r\n", objIndex, volInMv, currInMa);
+
+	currInMa -= 500;
+}
+
+bool PD_Policy_Hook(void)
+{
+	return false;
+}
 
 /**
  * @brief 采集功率输出

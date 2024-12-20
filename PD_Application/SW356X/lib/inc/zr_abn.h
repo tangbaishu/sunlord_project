@@ -216,20 +216,20 @@ typedef union
     uint32_t value;
     struct
     {
-        lps_adc_current_threshold_e lpsAdcCurrTh : 3;           // lps adc current compare threshold
-        lps_hmos_current_threshold_e lpsHmosCurrTh : 3;         // lps hmos current compare threshold
-        vout_scp_threshold_e voutScpTh : 1;                     // vout scp threshold
-        vout_uvp_threshold_e voutUvpTh : 1;                     // vout uvp threshold
-        vin_uvlp_threshold_e vinUvlpTh : 3;                     // vin uvlp threshold
-        vin_ovp_threshold_e vinOvpTh : 3;                       // vin ovp threshold
-        vin_ovp_debounce_time_e vinOvpDbcTime : 1;              // vin ovp debounce time
-        vout_sovp_debounce_time_e voutSovpDbcTime : 1;          // vout sovp debounce time
-        vout_fovp_debounce_time_e voutFovpDbcTime: 1;           // vout fovp debounce time
-        vin_uvlo_debounce_time_e vinUvloDbcTime: 1;             // vin uvlp debounce time
-        uint32_t reserved0: 1;                                  // reserved
-        dpdm_weak_short_threshold_e dpdmShortTh: 3;             // dpdm weak short threshold
-        ovp_shutdown_threshold_e ovpShutdownTh: 2;              // over temperature shutdown threshold  ovp shutdown threshold  
-        ovp_alarm_threshold_e ovpAlarmTh: 2;                    // over temperature alarm threshold     ovp alarm threshold
+        lps_adc_current_threshold_e lpsAdcCurrTh : 3;           // bit0~bit2    lps adc current compare threshold
+        lps_hmos_current_threshold_e lpsHmosCurrTh : 3;         // bit3~bit5    lps hmos current compare threshold
+        vout_scp_threshold_e voutScpTh : 1;                     // bit6         vout scp threshold
+        vout_uvp_threshold_e voutUvpTh : 1;                     // bit7         vout uvp threshold
+        vin_uvlp_threshold_e vinUvlpTh : 3;                     // bit8~bit10   vin uvlp threshold
+        vin_ovp_threshold_e vinOvpTh : 3;                       // bit11~bit13  vin ovp threshold
+        vin_ovp_debounce_time_e vinOvpDbcTime : 1;              // bit14        vin ovp debounce time
+        vout_sovp_debounce_time_e voutSovpDbcTime : 1;          // bit15        vout sovp debounce time
+        vout_fovp_debounce_time_e voutFovpDbcTime: 1;           // bit16        vout fovp debounce time
+        vin_uvlo_debounce_time_e vinUvloDbcTime: 1;             // bit17        vin uvlp debounce time
+        uint32_t reserved0: 1;                                  // bit18        reserved
+        dpdm_weak_short_threshold_e dpdmShortTh: 3;             // bit19~bit21  dpdm weak short threshold
+        ovp_shutdown_threshold_e ovpShutdownTh: 2;              // bit22~bit23  over temperature shutdown threshold  ovp shutdown threshold  
+        ovp_alarm_threshold_e ovpAlarmTh: 2;                    // bit24~bit25  over temperature alarm threshold     ovp alarm threshold
         uint32_t reserver1: 6;                                  // reserved
     } bitFields;
 } abn_config_t;

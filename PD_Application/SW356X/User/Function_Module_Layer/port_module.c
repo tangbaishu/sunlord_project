@@ -9,7 +9,7 @@
 
 Port_Module_Data_t	Port_Module_Data;
 
-#if CONFIG_PORT_MODE == SET_DUO_CC_MODE
+#if ((CONFIG_PORT_MODE == SET_SINGLE_C_MODE) || (CONFIG_PORT_MODE == SET_DUO_CC_MODE))
 	static void Typec_Attach_Hook(u8 portIndex);
 	static void Typec_Detach_Hook(u8 portIndex);
 #else
@@ -47,7 +47,7 @@ Port_Module_Data_t	Port_Module_Data;
 
 void Port_Scan_Func_Init(void)
 {
-	#if CONFIG_PORT_MODE == SET_DUO_CC_MODE
+	#if ((CONFIG_PORT_MODE == SET_SINGLE_C_MODE) || (CONFIG_PORT_MODE == SET_DUO_CC_MODE))
 		Typec_Init_Hook_Func(Typec_Attach_Hook, Typec_Detach_Hook);
 	#else
 		Register_Noload_Trigger_Callback(A_C_Noload_Trigger_Callback);				// 仅适用于 A+A / A+C 模式
@@ -159,7 +159,7 @@ void Port_Scan_Func_Logic(void)
 	#endif
 }
 
-#if CONFIG_PORT_MODE == SET_DUO_CC_MODE
+#if ((CONFIG_PORT_MODE == SET_SINGLE_C_MODE) || (CONFIG_PORT_MODE == SET_DUO_CC_MODE))
 	static void Typec_Attach_Hook(u8 portIndex)
 	{
 		// printf(LOG"Typec_Attach_Hook() portIndex = %#x\r\n",portIndex);
