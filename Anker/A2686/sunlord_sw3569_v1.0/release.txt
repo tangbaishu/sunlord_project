@@ -1,0 +1,372 @@
+﻿V1.6.5 2024-1030
+1. Can tx hardreset just pd enable
+2. Close uvp when in epr pps
+3. Decrease discoverID Req delay time to 36ms
+4. Improve scp distribution and gating pd logic set to scp protocol inside
+5. SW356x_Bin_Tool_Release_V2.3 released with new type SW3569H added
+
+V1.6.4 2024-0919
+1. Update pd status message context
+2. Accept pps while the required current is less 1a, and set current to 1a
+
+V1.6.3 2024-0823
+1. Modify scp/pd gating logic
+2. Modify fcp vol cap response
+3. Update Rcc config for chip version C
+
+V1.6.2 2024-0813
+1. Set ufcs/pd interrupt to the highest priority
+
+V1.6.1 2024-0809
+1. Add new api
+- Power_Get_Voltage_Slew()
+- Power_Get_Current_Slew()
+- Power_Hsmos_Strength_Get()
+- Config_Get_Noload_Threshold()
+- Device_Buck_Get_Temp_Parameter()
+2. fix pd tx alert bug,test 7.11 1181 version lercory
+3. wireless rx sop1 discId, send src cap time decrease to 110ms
+4.Add api Adc_Die_Force_Close() 
+5.Add lps check debounce
+6.Fix qc3+ indicate cap vol
+7.still rx hardreset when hardreset time
+8.Decrease pd enable delay time to 4ms
+9.Modify rx softreset handle code
+
+V1.6.0 2024-0702
+1. Check isTypecVconnEnabled for all open vconn
+2. tx hardreset when rx PD_EPR_Source_Capabilities
+3. Clear all event when rx softreset for tx set at one time
+4. default bmc fail/rp gating for pd cert
+5. Modify handle logic for tx/rx set at one time
+6. Fix cannot handshake to vooc when apple and samsung are disabled
+7. Update Rcc config for chip version C
+8. add new cfg vPpsShutDownInMv
+
+V1.5.9 2024-0626
+1. Increase timeout cfg for pd cert when main loop longer
+2. Check isTypecVconnEnabled when hardreset recover
+3. New config isPdCertWithApple for pd cert with apple enable
+
+V1.5.8 2024-0612
+1. Set 0x4000d000 bit13 to 1
+2. Add Config_Set_Lps function
+3. Pd2.0 ignore vdm when not support
+4. After send message,rx message trigger soft reset
+5. Modify epr exit process:send epr src cap without epr pdo
+6. Add api  Pd_Exit_Epr_Mode
+7. Add cfg gConfig.isIgnoreEprCable to ignore epr cable and send 140w epr src cap
+8. Fix rx scp packet loss bug when add some app process
+9. Fix plug in irq loss when enable A_A_NOLOAD_TRIGGER
+
+V1.5.7 2024-0430
+1. Add pid/xid cfg for src_cap_ext message
+2. Support gate force control mode which has fast charge see demo GATE_FORCE_CTRL
+3. Clean up main to remove demo code
+4. Update otp temperature trimming for chip version A only
+
+V1.5.6 2024-0419
+1. Fix fast charge is not enable when sfcp & tfcp disabled in Samsung distribution
+2. Fix port2 cannot go to samsung for C+A in Apple distribution when apple and samsung are disabled
+3. New api Is_Port1_Plugoff()/Is_Port2_Plugoff() to get port plug-off for A+A port noload customization
+4. Add Tfcp current offset by 10%
+5. Update pd protocol index when accept sent success
+
+V1.5.5 2024-0411
+1. Fix bug dpdm protocol cannot work anymore when SCP clock is not close correctly when unplugging phone
+2. Fix bug die shutdown cannot relieved when die alarm & die shutdown are relieved at the same time
+3. Add device temperature and usb port temperature in config for ufcs src_info message, see ufcsDevTemp/ufcsUsbTemp
+
+V1.5.4 2024-0401
+1. Change power setting accordingly
+2. Fix GPIO11 error pin function in DUO_CA_MODE mode
+
+V1.5.3 2024-0311
+1. Fix ufcs rx loss message:decrease one time app layer loop for handler rx 
+2. Tx hardreset when error epr_resquest
+3. Fix pps/spr avs check error
+
+V1.5.2 2024-0304
+1. Add pd spr avs support
+2. Add pd spr avs protocol message set
+3. New api Power_Hsmos_Strength_Cfg() to config Hsmos
+
+V1.5.1 2024-0218
+1. Fix dpdm rx not enable error
+
+V1.5.0 2024-0131
+1. New api Device_Buck_Config_Temp_Parameter() to Set Buck constant temperature parameter
+2. Update Abnormal_Hook pending bits description
+3. Fix a port ufcs handshake error
+
+v1.4.9 2024-0116
+1. Fix injoinic emarker response vdm error , see config->pdVdmVer
+2. New upgrade tool v2.2 to support SW3561S
+
+v1.4.8 2024-0112
+1. New api Device_Get_Uid() to get uid for SW356R only, please note it shall use zr356x_dev.sct link script with demo 
+    see main.c READ_UID_TEST
+2. Change buck vout discharge time of voltage decreased adjustment to 48us/10mV for chip A and chip B
+3. Fix dpdm error counter pending when set counter value to 1
+4. Voltage limited for sw3561s
+
+v1.4.7 2023-1228
+1. Add multiple port pd certification example code 
+2. Fix MacBookPro exit epr error when isInvalidPpsEnabled is set to true
+
+v1.4.6 2023-1213
+1. New lib SW356R_vXXX.lib for library without vooc 
+2. Change library compiler option to -Oz for SW356R_vXXX.lib and SW356x_vXXX.lib
+
+v1.4.5 2023-1206
+1. New api Low_Power_Is_Deep_Sleep() to get whether it is to deep sleep
+2. New api Uart_Baudrate_Cfg_On_Deep_Sleep() to config uart baudrate on the deep sleep 
+3. Vooc compiler condition BUILD_VOOC
+
+v1.4.4 2023-1128
+1. Pd ignores rx alert message
+
+v1.4.3 2023-1124
+1. Fix vooc 200mA debounce flag is not clear bug
+2. Add i2c slave demo see i2c_slave.c and zr2050 as master (see zr2050 demo)
+3. New upgrade tool version 2.1 to add IUM whether to ignore checksum in boot loader
+
+v1.4.2 2023-1121
+1. Update buck Vdrv to level 6 for chip version B
+2. Fix pd protocol index error when pd2.0
+3. New apis or callbacks for single C to control two gates scenario to meet the case a2460 requirements，see demo SING_C_CTRL_TWO_PORTS in main.c
+   1). Provided callback Register_Buck_Off_Callback() to customize buck off action
+   2). Provided callback Register_Mos_On_Callback() to customize mos on action
+   3). Provided api Power_Buck_Ctrl()/Power_Is_Buck_On() for buck controlling
+   4). Provided api Power_Gate_Ctrl()/Power_Is_Gate_On() for gate controlling
+   5). Provided api Power_Adjust()/Power_Is_Adjust_Finished() for power adjusting
+   6). Provided callback Register_Current_Limitation_Callback() for limit port current
+   7). Update Adc_Start_Adc_Channel()/Adc_Stop_Adc_Channel() with ADC_VOUT/ADC_IOUT2 options
+
+v1.4.1 2023-1113
+1. Separate vooc to a standalone library
+2. Fix ufcs handshake issue
+3. New Api Power_Set_Voltage_Slew()/Power_Set_Current_Slew() to set voltage/current slew
+4. Register_Noload_Trigger_Callback & Register_Noload_State_Customize_Callback apply A+A mode
+5. Update Vd_Detect_Result_Get() api to improve VD detection with debounce and detection time parameters
+
+v1.4.0 2023-1026
+1. Update api Adc_Vout_Get()/Adc_Vout_Raw_Get() will return 0 when buck is close 
+
+v1.3.9 2023-1026
+1. New version 2.0 upgrade tool to fix zr2067_universal download fail 
+2. New api Device_Get_Mos_Resistance() to get opt_rmos
+3. New api Device_Set_Vr_Ocp/Device_Get_Vr_Ocp to set/get opt_ocp
+
+v1.3.8 2023-1024
+1. Change invalid request process
+2. Change demo default setting for voltage offset is 200mV, current offset is 300mA 
+3. New api Device_Buck_Config for buck config for different setup 
+
+v1.3.7 2023-1018
+1. Combine chip version to one lib
+
+v1.3.6 2023-1018
+1. Fix SCP DP drop detection bug for HWP disable scenario
+
+v1.3.5 2023-1016
+1. fix adc check vppsshutdown error
+2. fix qc error clear protocol indicate
+3. fix pd tx/rx message conflict
+
+v1.3.4 2023-0926
+1. Add cc2 connect state api Typec_Is_Cc2_Connect()
+
+v1.3.3 2023-0925
+1. Add typec connect time configuration see config typecConnectTime
+2. New version 1.9.1 upgrade tool
+
+v1.3.2 2023-0922
+1. Support chip B version 
+2. Separate two libs SW356x_vxxx_b.lib for Chip B version, SW356x_vxxx_a.lib for Chip A version,
+   the demo project default is used SW356x_vxxx_b.lib
+
+v1.3.1 2023-0914
+1. New api Vout_Ovp_Ctrl() to control ovp 
+
+v1.3.0 2023-0913
+1. Add new Api Config_Get_Sn() to get SN address with example see READ_VFCP_SN
+2. New version 1.9 upgrade tool to support load vivo key, the key file format see LoadVivoKey_test.xlsx
+3. Enable AFC to handle 0x1 command to resend src cap.
+4. Fix FCP working voltage value error
+
+v1.2.9 2023-0911
+1. Fix SCP compatibility issue
+2. Update FCP 18W display cap.
+
+v1.2.8 2023-0904
+1. Fix offset set error
+2. New api to short dpdm and get dpdm short status
+
+v1.2.7 2023-0828
+1. New version 1.8 upgrade tool to add SW3566S chip version and new seed
+
+v1.2.6 2023-0828
+1. New Api Vin_Ovp_Ctrl() to enable/disable vin OVP 
+2. New Api Abn_Force_Ctrl() to force an abnormal and relive it 
+3. Recover apple2samsung condition(0.325~1.05v) 
+4. Fix timer close when src ready exit
+5. dd pps5v min vol code
+6. New version 1.7.1 upgrade tool to add  IUM about pd_version
+
+v1.2.5 2023-0814
+1. Add Noload state customized callback see Register_Noload_State_Customize_Callback and a demo provided in main.c
+2. Update buck config slop rate to 1
+3. Add abnormal hook function see Abnormal_Init_Hook_Func() 
+
+v1.2.4 2023-0803
+1. Fix power adjust callback bug: multiple same voltage adjustments
+2. Add Noload trigger callback for A+C in both device attached see Register_Noload_Trigger_Callback
+3. Add NoLoad x second config callback on entry of port A device attached in A+C mode see Register_Noload_X_Second_Config_Callback
+4. Update I2c_Master_Freq_Set() prototype, set the "freq" data type to uint8_t
+
+v1.2.3 2023-0725
+1. Sink lenovo update try snk
+2. Limit SW3561 21V for power adjustment all scenarios
+3. Limit SW3561 21V for UFCS
+
+v1.2.2 2023-0717
+1. Fixed epr src cap rebroadcast error
+2. Add lenovo sink policy code
+3. Fixed power startup with 4v prob
+4. Fixed UFCS comparison voltage to 1.6v
+
+v1.2.1 2023-0710
+1. Fix SFCP not update protocol state issue
+2. Add max voltage is limit to 21V for power hook of SW3561
+3. PD remove epr mode for sw3561
+4. Provide VD detection interfaces
+5. add api func for pd sink process,fix giveback bug
+6. New upgrade tool version 1.7 to support SW3561,improve communication with upgrade board
+
+v1.2.0 2023-0703
+1. Can not enter into tfcp when in pd contracted firstly
+2. Add dp 20kohm pull down resistance for scp
+3. Fix cable reset bug,fix epr cert bug
+4. Fixed scp constant power issue
+3. Fix compensation isEnable bug
+
+v1.1.9 2023-0628
+1. Add new interface to enable/disable flash low power feature Low_Power_Flash_Ctrl()
+2. Add new interface to config MOS resistance see Device_Cfg_Mos_Resistance()
+3. No check typec disconnection in DP_AC mode after port C online within 1.5s 
+
+v1.1.8 2023-0621
+1. Add code for ufcs certification
+2. Add power adjusting callback
+3. Fix vbus plugin error
+4. New upgrade tool version 1.6.4 
+
+v1.1.7 2023-0619
+1. Fix SCP current issue
+
+v1.1.6 2023-0614
+1. Fix pps change scp to 2.7v
+2. Fix a+c mode typec connect drp error
+3. Add typec port reset api see Port_Force_Disconnect()/Port_Reconnect()
+
+v1.1.5 2023-0525
+1. Fix epr 140w rebroadcast 100w bug
+
+v1.1.4 2023-0525
+1. Fix SCP max current bug
+2. Fix 5V OCP recover error
+
+v1.1.3 2023-0522
+1. Change function name I2c_master_Clock_Pulldown_Timer_Disable to I2c_Master_Clock_Pulldown_Timer_Disable
+2. Fix Config_Set_Noload_Threshold() bug
+3. Fix SCP max current bug
+
+v1.1.2 2023-0518
+1. Optimize Scp compatibility
+2. Fix connection issue in C+A mode while a typec try source port attached
+
+v1.1.1 2023-0510
+1. Fix Scp compatibility issues (Honor50Pro, magic4Pro): remove package length checking
+
+v1.1.0 2023-0509
+1. Fix FCP max voltage bug
+2. Change power config
+
+v1.0.9 2023-0428
+1. Support change buck clock by Device_Set_Buck_Clock
+2. Support compensation callback while voltage adjusting, see Device_Register_Cable_Compensate_Hook
+3. Close sop1 rx when no longer read cable
+4. Fix EPR enter process error when vconn low power enable 
+5. Fix src cap extend EPR power error
+6. Fixed SCP compatibility problem.
+7. Fix typec 12ms reconnect error
+8. Fix EPR response error when only support SPR
+9. Add typec connect cc line api Typec_Is_Cc1_Connect
+10. Document update accordingly
+
+v1.0.8 2023-0424
+1. Enable DP 20k ohm pull down res while entering into vooc
+2. Close uvp for ufcs
+3. Increase ufcs tx delay time
+4. Fix pd/qc4 bug
+5. Update document accordingly
+
+v1.0.7 2023-0418
+1. Fixed FCP max power error
+2. Fix Pd hook issue
+3. Fix Pd Atm timer issue in -O0 compiler condition
+4. Support broadcast 3a+ pdo without emark checking, Pd_Src_Cap_Ignore_Emarker
+
+v1.0.6 2023-0410
+1. Add exit EPR feature
+2. Optimize AFC
+3. Fix naming error: BTM4_xxx functions to Btm4_xxx 
+
+V1.0.5 2023-0404
+1. Add debug.ini to secondary development project for jumping to main in debug
+2. Fixed can't access into AFC when SCP is disabled 
+3. Update TFCP to the latest Spec. V2.4
+4. Hardware resource: BTM4 is used by secondary development and ATM0 is used by protocol, interfaces change & documents update accordingly
+
+V1.0.4 2023-03-29
+1. fix Adc Iout not output when buck is open after ADC is enabled
+
+V1.0.3 2023-03-29
+1. Bug fix Qc2 without apply voltage offset
+2. change Config_Apply_Cable_Compensation() to Config_Apply() for apply configuration changed immediately e.g. voltage offset, compensation, etc.
+
+V1.0.2 2023-03-28
+1. Change folder structure 
+    - Move protocol related Api to api.h
+    - Delete files version.h, common.h low_power.h
+    - Move serial.c & serial.h & user_pd_policy.c & user_pd_policy.h to project folder as they are demo project related
+2. Set all port mode in one lib, the port mode can be configured, see config port_mode_e
+3. Add current limitation for dual port mode, see config p1CurrentLimit & p2CurrentLimit
+4. Separate Apple 2.7V and Samsung 1.2V control in config see isAppleEnabled, isSamsungEnabled
+5. Separate Hv SCP and Lv SCP control in config see isHvScpEnabled, isLvScpEnabled
+6. Add new Api to get current requesting voltage, see Device_Get_Requesting_Voltage
+7. Change lib name to SW356X_VX.X.X.lib
+8. Add power change feature in UFCS
+9. Update Pdo generation with peak current support
+10. Add SW356x_Bin_Tool_Release_V1.6.1.exe in out\SW356x_Bin_Tool_Internal\ folder
+11. Update documents accordingly including pd flowchart, remove peripheral Api, wording etc.
+
+V1.0.1 2023-03-16
+1. Change Device_Get_Port_State() to return online or offline only
+2. Add Config_Set_Noload_Threshold() to set noload threshold in config.h
+
+V1.0.0 2023-0314
+1. Add Device_Get_Port_State() to get port state in device.h
+2. Add Adc_Vin_Enable/Adc_Vin_Disable to control vin Adc sampling in zr_adc.h
+3. Add Config_Apply_Cable_Compensation() to apply cable compensation immediately in config.h
+4. Move Pd related header files and source file to 'pd' folder
+5. Add low power before/after hooks in low_power.h
+6. documentation
+    - update peripheral document with hardware resources
+    - move flm to root folder 
+    - update chm 
+Note: No change version number in this update
+
+V1.0.0 2023-0303
+1. initial version
