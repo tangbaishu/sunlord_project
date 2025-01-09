@@ -106,7 +106,21 @@
 	"busi_port_detection.h": "c",
 	"i2c_protocol_library.h": "c",
 	"busi_i2c_bus.h": "c",
-	"func_i2c_slave.h": "c"
+	"func_i2c_slave.h": "c",
+	"i2cm_async.h": "c",
+	"device_driver.h": "c",
+	"sunlord_api.h": "c",
+	"hardware_config.h": "c",
+	"func_hardware_api.h": "c",
+	"i2cm_async_driver.h": "c",
+	"role_identification.h": "c",
+	"func_i2c_api.h": "c",
+	"port_data_library.h": "c",
+	"i2c_slave_driver.h": "c",
+	"busi_i2c_policy.h": "c",
+	"busi_share_memory.h": "c",
+	"busi_base_fast_charge_func.h": "c",
+	"func_power_alloc.h": "c"
 },
 "commentTranslate.hover.enabled": true,
 

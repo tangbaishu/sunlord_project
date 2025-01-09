@@ -8,14 +8,7 @@ typedef unsigned char uint8_t;
 #endif // !_DECA_UINT8_T_
 #endif // ! uint8_t
 
-#define IIC_MAX_WDATA_LEN			20
-#define IIC_MAX_RDATA_LEN			20
-
-#define I2C_M_SCK_GPIO_PIN		GPIO1			//	GPIO SCK IO口
-#define I2C_M_SCK_AF_MODE		FUNCTION_SEL7	//	GPIO SCK复用模式
-
-#define I2C_M_SDA_GPIO_PIN		GPIO2			//	GPIO SDA IO口
-#define I2C_M_SDA_AF_MODE		FUNCTION_SEL1	//	GPIO SDA复用模式
+#include "hardware_config.h"
 
 typedef enum
 {
@@ -34,8 +27,7 @@ typedef struct
 	uint8_t Reg_Addr;
 	uint8_t P_Wdata[IIC_MAX_WDATA_LEN];
 	uint8_t Wdata_Len;
-	uint8_t *P_Rdata;
-	// uint8_t P_Rdata[IIC_MAX_RDATA_LEN];
+	uint8_t P_Rdata[IIC_MAX_RDATA_LEN];
 	uint8_t Rdata_Len;
 }I2CM_Transfer_Info_t;
 
@@ -65,5 +57,7 @@ I2C_Master_State_e I2C_Master_Write_NByte(I2CM_Transfer_Info_t *wirte_data);
 
 
 I2C_Master_State_e I2C_Master_Read_NByte(I2CM_Transfer_Info_t *read_data);
+
+void I2C_Master_Driver_Test(uint8_t device_id);
 
 #endif // !_I2C_MASTER_DRIVER_H_

@@ -16,9 +16,7 @@
 #define NTC_OVER_TEMP_THRESHOLD			250
 #define NTC_RECOVER_TEMP_THRESHOLD		500
 
-#define NTC_VOLTAGE_VALUE_SAMPLE_RATE	25	// unit: ms
-#define NTC_TEMP_SAMPLE_START()			Adc_Start_Adc_Channel(ADC_CHL_2)
-#define NTC_TEMP_SAMPLE_STOP()			Adc_Stop_Adc_Channel(ADC_CHL_2)
+#define NTC_VOLTAGE_VALUE_SAMPLE_RATE	25	// unit: 单位：由 Base_Timer_Driver_Init() 参数决定
 
 typedef enum
 {
@@ -34,12 +32,13 @@ typedef enum
 
 typedef struct
 {
-	uint16_t			NTC_Voltage_Value;
-	uint8_t				NTC_Voltage_Sample_Time_Count;
-	NTC_Temp_State_e	NTC_Over_Temp_Flag;
-	OverTemp_Dispose_e	OverTemp_Dispose_Flag;
+	uint16_t				NTC_Voltage_Value;
+	uint8_t					NTC_Pullup_Current;				// 单位：uA
+	uint8_t					NTC_Voltage_Sample_Time_Count;	// NTC电压采样时间计数，在 @BTM4_Handler.h 内累加，单位：由 Base_Timer_Driver_Init() 参数决定
+	NTC_Temp_State_e		NTC_Over_Temp_Flag;
+	OverTemp_Dispose_e		OverTemp_Dispose_Flag;
 }NTC_Temp_Data_t;
-extern NTC_Temp_Data_t	NTC_Temp_Data;
+extern NTC_Temp_Data_t		NTC_Temp_Data;
 
 void NTC_Driver_Init(void);
 void NTC_Temp_Sample(void);

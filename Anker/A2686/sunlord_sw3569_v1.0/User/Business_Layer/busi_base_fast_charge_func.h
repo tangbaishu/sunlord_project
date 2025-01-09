@@ -15,7 +15,6 @@
 #ifndef _BUSI_BASE_FAST_CHARGE_FUNC_H_
 #define _BUSI_BASE_FAST_CHARGE_FUNC_H_
 
-
 void Busi_Fast_Charge_Driver_Init	(void);		
 void Busi_Vin_Voltage_Control		(void);			// 母线电压控制
 void Busi_LowPower_OnBefore			(void);			// 进入低功耗之前的处理函数

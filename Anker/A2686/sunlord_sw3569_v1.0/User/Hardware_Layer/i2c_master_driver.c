@@ -24,10 +24,13 @@ void I2C_Master_Driver_Init(uint8_t device_id)
 	Gpio_Mos_Opendrain_Cfg(I2C_M_SCK_GPIO_PIN, PMOS_OPDRAIN_DIS, NMOS_OPDRAIN_EN);
 	Gpio_Mos_Opendrain_Cfg(I2C_M_SDA_GPIO_PIN, PMOS_OPDRAIN_DIS, NMOS_OPDRAIN_EN);
 	Gpio_Pulldown_Pullup_Cfg(I2C_M_SCK_GPIO_PIN, PULLDOWN_DIS, PULLUP_EN);
-	Gpio_Pulldown_Pullup_Cfg(I2C_M_SCK_GPIO_PIN, PULLDOWN_DIS, PULLUP_EN);
+	Gpio_Pulldown_Pullup_Cfg(I2C_M_SDA_GPIO_PIN, PULLDOWN_DIS, PULLUP_EN);
+	Gpio_Pullup_Resistance_Cfg(I2C_M_SCK_GPIO_PIN, PULLUP_RES_10K);
+	Gpio_Pullup_Resistance_Cfg(I2C_M_SDA_GPIO_PIN, PULLUP_RES_10K);
+	
 
 	i2cm_config.devAddr = device_id;
-	i2cm_config.clockSpeed = 100;
+	i2cm_config.clockSpeed = 50;
 	I2c_Master_Init(&i2cm_config);
 	I2c_Master_Int_Enable(I2C_M_FINISH_INT_EN | I2C_M_ERROR_INT_EN | I2C_M_BUS_LOST_INT_EN | I2C_M_SCL_TIMEOUT_INT_EN);
 	I2c_Master_Clear_Pending(I2C_M_FINISH_PENGING | I2C_M_NACK_PENGING | I2C_M_BUS_LOST_PENGING | I2C_M_SCL_TIMEOUT_PENGING);
@@ -69,19 +72,34 @@ void I2CM_Handler(void)
 		I2c_Master_Clear_Pending(I2C_M_FINISH_PENGING);
 		I2C_M_Driver.Runing_State = IDLE;
 	}
-	else if(I2c_Master_Get_Pending(I2C_M_NACK_PENGING) == SET)
+
+	if(I2c_Master_Get_Pending(I2C_M_NACK_PENGING) == SET)
 	{
 		I2C_M_Driver.Runing_State = WAIT_FINISH_OVER_TIME;
 		I2c_Master_Clear_Pending(I2C_M_NACK_PENGING);
 	}
-	else if(I2c_Master_Get_Pending(I2C_M_BUS_LOST_PENGING))
+
+	if(I2c_Master_Get_Pending(I2C_M_BUS_LOST_PENGING))
 	{
 		I2C_M_Driver.Runing_State = BUS_LOST;
 		I2c_Master_Clear_Pending(I2C_M_BUS_LOST_PENGING);
 	}
-	else if(I2c_Master_Get_Pending(I2C_M_SCL_TIMEOUT_PENGING))
+
+	if(I2c_Master_Get_Pending(I2C_M_SCL_TIMEOUT_PENGING))
 	{
 		I2C_M_Driver.Runing_State = SCL_TIMEOUT;
 		I2c_Master_Clear_Pending(I2C_M_SCL_TIMEOUT_PENGING);
 	}
+}
+
+void I2C_Master_Driver_Test(uint8_t device_id)
+{
+	I2CM_Transfer_Info_t i2cm_test_data;
+	I2C_Master_Driver_Init(device_id);
+	Systick_Delay_Ms(200);
+	i2cm_test_data.Reg_Addr = 0X01;
+	i2cm_test_data.P_Wdata[0] = 0xAF;
+	i2cm_test_data.P_Wdata[1] = 0xFA;
+	i2cm_test_data.Wdata_Len = 2;
+	I2C_Master_Write_NByte(&i2cm_test_data);
 }

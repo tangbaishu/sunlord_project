@@ -71,10 +71,10 @@ void BTM4_Handler(void)
 	{
 		Base_Timer_1ms_Count++;
 
-		if(Busi_Power_Policy_Data.Software_Timer_EN)
-		{
-			Busi_Power_Policy_Data.Output_Voltage_Sample_Timer++;
-		}
+//		if(Busi_Power_Policy_Data.Software_Timer_EN)
+//		{
+//			Busi_Power_Policy_Data.Output_Voltage_Sample_Timer++;
+//		}
 
 		NTC_Temp_Data.NTC_Voltage_Sample_Time_Count++;
 		if(NTC_Temp_Data.NTC_Voltage_Sample_Time_Count > NTC_VOLTAGE_VALUE_SAMPLE_RATE)

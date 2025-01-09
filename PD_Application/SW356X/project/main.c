@@ -27,6 +27,7 @@
 
 #include "user_pd_policy.h"
 #include "i2c_slave.h"
+#include "i2c_api.h"
 
 #include <stdio.h>
 
@@ -229,7 +230,7 @@ int main(void)
    
     Serail_Init(460800);
     printf("\nzr2067_app: %s %s\n", __DATE__, __TIME__);
-
+	I2C_Master_Driver_Check();
     Power_Business_Init();
     #include "log_function.h"
 	LOG_Abnormal_Occurred_Event(0x7FFFF);

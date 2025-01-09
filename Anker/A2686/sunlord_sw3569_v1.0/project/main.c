@@ -6,7 +6,7 @@
  ****************************************************************************/
 #include "base_timer_driver.h"
 #include "app_fast_charge.h"
-#include "busi_i2c_bus.h"
+// #include "busi_i2c_bus.h"
 
 #include "api.h"
 #include "config.h"
@@ -146,8 +146,13 @@ static void Gate_Online_Customize_Callback(bool* isPort1Offline, bool* isPort2Of
 #endif
 
 #include "busi_port_detection.h"
-#include "busi_fast_charge_config.h"
+#include "func_power_alloc.h"
 #include "app_fast_charge.h"
+#include "device_driver.h"
+#include "func_hardware_api.h"
+#include "busi_i2c_policy.h"
+#include "app_sys_ctl.h"
+
 int main(void)
 {
     static uint32_t xms_slice=0;
@@ -163,17 +168,35 @@ int main(void)
     printf("Serail_Init\r\n");
     printf("\nzr2067_app: %s %s\n", __DATE__, __TIME__);
 // #endif
-    #if (DEVICE_TYPE == HOST_DEVICE)
-        Systick_Delay_Ms(200);
-    #endif
-    Busi_I2C_Init();
+//	Func_I2CM_Async_Example();
+    // I2C_Master_Driver_Test(0X3C);
+    // I2CM_Async_Driver_Test();
+    // Busi_I2C_Init();
     APP_Fast_Charge_Init();
-    xms_slice = Base_Timer_1ms_Count;
 
+    // Func_I2C_Driver_Init(I2C_SLAVE, 50, NULL); 
+    // Func_I2C_Driver_Init(I2C_MASTER, 50, &I2C_Driver_Module);
+    Func_Hardware_Drvier_Init();
+
+    // Base_Timer_Driver_Init(1);
+    // xms_slice = Base_Timer_1ms_Count;
+    // Func_I2C_API_Example(I2C_MASTER_ASYNC);
     while (1)
     {
         // the following sequence shall NOT change
         Device_Run();
+        Busi_Port_Detection();  // 获取自身硬件驱动相关状态
+        if(HOST_ROLE == Hardware_Driver_Data.Device_Type)
+        {
+            if( PROCESS_READ_RGE_FINSIH == Busi_I2C_Policy(&Busi_I2C_Policy_Data) )  // 主机遍历从机运行数据
+            {
+                
+            }
+        }
+        else
+        {
+            Slave_State_Machine();  // 从机运行逻辑，基于状态机确定
+        }
         
         if((Base_Timer_1ms_Count - xms_slice) > 2000)
         {
@@ -192,7 +215,6 @@ int main(void)
             // }
             
         }
-        APP_Fast_Charge_Running();
         // Low_Power_Sleep();
     }
 }

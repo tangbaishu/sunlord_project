@@ -865,25 +865,25 @@
               <FileType>1</FileType>
               <FilePath>..\User\Application_Layer\app_fast_charge.c</FilePath>
             </File>
+            <File>
+              <FileName>app_sys_ctl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Application_Layer\app_sys_ctl.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>User/Business_Layer</GroupName>
           <Files>
             <File>
-              <FileName>busi_base_fast_charge_func.c</FileName>
+              <FileName>busi_i2c_policy.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Business_Layer\busi_base_fast_charge_func.c</FilePath>
+              <FilePath>..\User\Business_Layer\busi_i2c_policy.c</FilePath>
             </File>
             <File>
-              <FileName>busi_fast_charge_config.c</FileName>
+              <FileName>busi_share_memory.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Business_Layer\busi_fast_charge_config.c</FilePath>
-            </File>
-            <File>
-              <FileName>busi_i2c_bus.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Business_Layer\busi_i2c_bus.c</FilePath>
+              <FilePath>..\User\Business_Layer\busi_share_memory.c</FilePath>
             </File>
             <File>
               <FileName>busi_port_detection.c</FileName>
@@ -891,14 +891,9 @@
               <FilePath>..\User\Business_Layer\busi_port_detection.c</FilePath>
             </File>
             <File>
-              <FileName>busi_power_policy_engine.c</FileName>
+              <FileName>busi_base_fast_charge_func.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Business_Layer\busi_power_policy_engine.c</FilePath>
-            </File>
-            <File>
-              <FileName>busi_src_cap_policy.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Business_Layer\busi_src_cap_policy.c</FilePath>
+              <FilePath>..\User\Business_Layer\busi_base_fast_charge_func.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -906,24 +901,24 @@
           <GroupName>User/Function_Module_Layer</GroupName>
           <Files>
             <File>
-              <FileName>func_gather_temp.c</FileName>
+              <FileName>func_i2c_api.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Function_Module_Layer\func_gather_temp.c</FilePath>
+              <FilePath>..\User\Function_Module_Layer\func_i2c_api.c</FilePath>
             </File>
             <File>
-              <FileName>func_hardware_init.c</FileName>
+              <FileName>func_hardware_api.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Function_Module_Layer\func_hardware_init.c</FilePath>
+              <FilePath>..\User\Function_Module_Layer\func_hardware_api.c</FilePath>
             </File>
             <File>
-              <FileName>func_i2c_slave.c</FileName>
+              <FileName>sw3566_lib.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Function_Module_Layer\func_i2c_slave.c</FilePath>
+              <FilePath>..\User\Function_Module_Layer\sw3566_lib.c</FilePath>
             </File>
             <File>
-              <FileName>func_vin_control.c</FileName>
+              <FileName>func_power_alloc.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\Function_Module_Layer\func_vin_control.c</FilePath>
+              <FilePath>..\User\Function_Module_Layer\func_power_alloc.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -931,14 +926,19 @@
           <GroupName>User/Hardware_Layer</GroupName>
           <Files>
             <File>
-              <FileName>gpio_config.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\Hardware_Layer\gpio_config.c</FilePath>
-            </File>
-            <File>
               <FileName>base_timer_driver.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware_Layer\base_timer_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>device_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Layer\device_driver.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Layer\gpio_config.c</FilePath>
             </File>
             <File>
               <FileName>i2c_master_driver.c</FileName>
@@ -951,9 +951,19 @@
               <FilePath>..\User\Hardware_Layer\i2c_slave_driver.c</FilePath>
             </File>
             <File>
+              <FileName>i2cm_async_driver.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Layer\i2cm_async_driver.c</FilePath>
+            </File>
+            <File>
               <FileName>ntc_temp_sample.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\Hardware_Layer\ntc_temp_sample.c</FilePath>
+            </File>
+            <File>
+              <FileName>role_identification.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\Hardware_Layer\role_identification.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -3,6 +3,9 @@
 
 #include "api.h"
 
+#define SYS_PORT_MAX_NUMBER		2	// 端口数量 （从1开始计数）
+#define	CHIP_TYPE_C_PORT_NUM	1	// 芯片Type-c 映射端口编号
+
 /**
  * 端口可广播功率列表
  */
@@ -16,34 +19,32 @@ typedef enum
 	POWER_PDO_5W,		// 5W
 }POWER_PDO_Mode_e;
 
-/**
- * 端口连接状态
- * 
- */
-typedef enum
-{
-	Port_ALL_Pull_Out,					// 所有端口全部拔出(为变量初始化保留，上电后在系统初始化阶段，相应变量会更新)
-	Port_1_Pull_Out,					// 端口1拔出
-	Port_2_Pull_Out,					// 端口2拔出
-	Port_1_Insert,						// 端口1插入	
-	Port_2_Insert						// 端口2插入	
-}Port_Link_State_e;
-
 typedef struct
 {
-	Port_Link_State_e		Port_Link_State;		// 端口连接状态
-	fast_charge_protocol_e	Protocol_Type;			// 端口协议类型
+	fast_charge_protocol_e	Protocol_Type;			// 端口协议类型	
 	uint16_t 				Protocol_Voltage;		// 端口输出电压
 	uint16_t 				Protocol_Current;		// 端口输出电流
-	POWER_PDO_Mode_e		Current_Power_Grade; // 当前端口输出协议等级
-	// uint16_t 				Portocol_Power;		// 功率
-}Port_Out_Protocol_Data_t;
+	POWER_PDO_Mode_e		Current_Power_Grade; 	// 当前端口输出协议等级
+}Port_Out_Protocol_Info_t;										// 端口输出信息
 
 typedef struct
 {
 	uint16_t				Voltage;		//  unit: mV
 	uint16_t				Current;		//  unit: mA
 	uint16_t				Power;			//  unit: mW
-}Port_RealTime_Out_Power_t;
+}RealTime_Out_Power_t;
+
+/**
+ * 端口连接状态
+ * 
+ */
+typedef struct
+{
+	uint8_t						Port_Link_State;					// 端口连接状态	端口插入：bitx==1、端口拔出：bitx=0; bit0:对应自身芯片映射端口1, bit1:对应从机1的映射端口
+	Port_Out_Protocol_Info_t	Port_Info;				// 端口输出协议信息
+	RealTime_Out_Power_t		RealTime_Out_Powe;		// 端口实时输出功率
+	uint8_t						Port_NTC_Res;			// 端口NTC阻值
+}Port_Out_Info_t;
+extern Port_Out_Info_t Port_Out_Info[SYS_PORT_MAX_NUMBER];	// 各个端口输出信息
 
 #endif

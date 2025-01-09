@@ -1,9 +1,6 @@
 #include "app_fast_charge.h"
 #include "busi_base_fast_charge_func.h"
 #include "busi_power_policy_engine.h"
-#include "busi_Fast_Charge_Config.h"
-#include "busi_i2c_bus.h"
-
 #include "api.h"
 #include "zr_systick.h"
 
@@ -12,6 +9,7 @@
     #define LOG "app_f_c: "
 #endif
 
+extern struct SW_API_Func_t SW3566_Func;
 App_Fast_Charge_Data_t	App_Fast_Charge_Data;
 config_data_t* Fast_Charge_Config;
 
@@ -20,13 +18,12 @@ void temporary_func(void)
 
 }
 
-App_Fast_Charge_Func_t App_Fast_Charge_Func={
+App_Fast_Charge_t App_Fast_Charge={
     .P_Fast_Charge_Driver_Init      =   Busi_Fast_Charge_Driver_Init,	// 基于客户需求，对快充模块进行硬件初始化配置
-    .P_Vin_Voltage_Control          =   Busi_Vin_Voltage_Control,       // 母线电压控制
-	.P_Real_Time_Allocation_Power   =   Real_Time_Allocation_Power,     // 实时功率分配
+	// .P_Real_Time_Allocation_Power   =   Real_Time_Allocation_Power,     // 实时功率分配
     .P_P_Dual_Port_Insert_Dispose   =   temporary_func,                 // 双端口插入处理	单双口功率切换处理
     .P_Temperature_Adjust_Power     =   temporary_func,                 // 温度调控			基于温度点，调整功率输出挡位
-    .P_Set_Buck_Frequence           =   Device_Buck_Config,             // 设置降压频率		按照客户需求，初始化配置Buck频率
+    .SW_API_Func                    =   &SW3566_Func,
     .P_LowPowerHook_OnBefore        =   Busi_LowPower_OnBefore,         // 进入低功耗之前的处理函数
     .p_LowPowerHook_OnAfter         =   Busi_LowPower_OnAfter,          // 从低功耗唤醒后的处理函数
 };
@@ -37,7 +34,7 @@ App_Fast_Charge_Func_t App_Fast_Charge_Func={
  */
 void APP_Fast_Charge_Init(void)
 {
-    // App_Fast_Charge_Func.P_Set_Buck_Frequence(BUCK_CFG_181KHZ_10UH);
+    // App_Fast_Charge.P_Set_Buck_Frequence(BUCK_CFG_181KHZ_10UH);
 	Fast_Charge_Config = Config_Get();
 	Fast_Charge_Config->portMode = SINGLE_C_MODE;
 
@@ -161,12 +158,13 @@ void APP_Fast_Charge_Init(void)
     Fast_Charge_Config->pdVdmVer = 4;
 	Fast_Charge_Config->isIgnoreEprCable = false;
 	Fast_Charge_Config->vPpsShutDownInMv = 3100;
-
-    App_Fast_Charge_Func.P_Real_Time_Allocation_Power(Fast_Charge_Config);
+    // App_Fast_Charge.SW_API_Func->SW_Set_Output_Power(1,false,5);
+    Power_PDO_Mode_Select(Fast_Charge_Config, POWER_PDO_35W);
+    // App_Fast_Charge.P_Real_Time_Allocation_Power(Fast_Charge_Config);
     Config_Apply();
-    App_Fast_Charge_Func.P_Fast_Charge_Driver_Init();
+    App_Fast_Charge.P_Fast_Charge_Driver_Init();
     
-	Low_Power_Register_Hook(App_Fast_Charge_Func.P_LowPowerHook_OnBefore, App_Fast_Charge_Func.p_LowPowerHook_OnAfter);
+	Low_Power_Register_Hook(App_Fast_Charge.P_LowPowerHook_OnBefore, App_Fast_Charge.p_LowPowerHook_OnAfter);
 
     // Pd_Init_Hook_Func(PD_Request_Info_func, PD_Policy_Hook);               // 仅支持PD协议
 	// Device_Register_Power_Adjust_Hook(Power_Adjust_Hook);                   // sink请求任意协议，均会回调该函数
@@ -175,6 +173,5 @@ void APP_Fast_Charge_Init(void)
 
 void APP_Fast_Charge_Running(void)
 {
-    App_Fast_Charge_Func.P_Real_Time_Allocation_Power(Fast_Charge_Config);    // 配置 ufcs 和 PD 协议输出功率
-    Busi_I2C_Bus();
+    App_Fast_Charge.P_Real_Time_Allocation_Power(Fast_Charge_Config);    // 配置 ufcs 和 PD 协议输出功率
 }
